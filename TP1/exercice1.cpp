@@ -11,40 +11,40 @@ using namespace std;
 int main()
 {
 	cout << "Saisissez une phrase : ";
-	string Sentence;
-	getline(cin, Sentence);
-	string SmallestWord = Sentence;
-	string BiggestWord = "";
-	double MeanLenWords = 0;
-	int NbOfWords = 0;
-	string CurrentWord = "";
-	for (char charac : Sentence)
+	string sentence;
+	getline(cin, sentence);
+	string smallestWord = sentence;
+	string biggestWord = "";
+	double meanLenWords = 0;
+	int nOfWords = 0;
+	string currentWord = "";
+	for (char charac : sentence)
 	{
 		if (charac == ' ')
 		{
-			NbOfWords++;
-			MeanLenWords += CurrentWord.size();
-			if (CurrentWord.size() < SmallestWord.size())
+			nOfWords++;
+			meanLenWords += currentWord.size();
+			if (currentWord.size() < smallestWord.size())
 			{
-				SmallestWord = CurrentWord;
+				smallestWord = currentWord;
 			}
-			else if (CurrentWord.size() > BiggestWord.size())
+			else if (currentWord.size() > biggestWord.size())
 			{
-				BiggestWord = CurrentWord;
+				biggestWord = currentWord;
 			}
-			CurrentWord = "";
+			currentWord = "";
 		}
 		else
 		{
-			CurrentWord += charac;
+			currentWord += charac;
 		}
 	}
-	NbOfWords++;
-	MeanLenWords += CurrentWord.size();
-	cout << "Le mot le plus court est : " << SmallestWord << endl;
-	cout << "Le mot le plus long est : " << BiggestWord << endl;
-	MeanLenWords /= NbOfWords;
-	cout << "La longueur moyenne est : " << MeanLenWords << " lettres" << endl;
+	nOfWords++;
+	meanLenWords += currentWord.size();
+	cout << "Le mot le plus court est : " << smallestWord << endl;
+	cout << "Le mot le plus long est : " << biggestWord << endl;
+	meanLenWords /= nOfWords;
+	cout << "La longueur moyenne est : " << meanLenWords << " lettres" << endl;
 
 	return 0;
 }

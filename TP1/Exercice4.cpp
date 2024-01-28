@@ -1,7 +1,7 @@
 /*
 Programme qui effectue la multiplication
-russe pour deux nombres et qui vérifie cette
-dernière au moyen de trois tests.
+russe pour deux nombres et qui verifie cette
+derniere au moyen de trois tests.
 */
 
 #include <array>
@@ -9,17 +9,21 @@ dernière au moyen de trois tests.
 #include <string>
 using namespace std;
 
-struct Test {
+struct Test
+{
 	int a;
 	int b;
 	int c;
 };
 
-int russianMultiplication(int a, int b) {
+int russianMultiplication(int a, int b)
+{
 	int result = 0;
 
-	while (a > 0) {
-		if (a % 2 != 0) {
+	while (a > 0)
+	{
+		if (a % 2 != 0)
+		{
 			result += b;
 		};
 		a /= 2;
@@ -28,7 +32,8 @@ int russianMultiplication(int a, int b) {
 	return result;
 }
 
-int main() {
+int main()
+{
 	Test myArray[3];
 	myArray[0].a = 37;
 	myArray[0].b = 129;
@@ -41,12 +46,14 @@ int main() {
 	myArray[2].a = 42;
 	myArray[2].b = 1048;
 	myArray[2].c = russianMultiplication(42, 1048);
-	int nbTest = 3;
-	int nbTestSucceed = 0;
-	for (int i = 0; i < 3; ++i) {
-		if (myArray[i].a * myArray[i].b == myArray[i].c) {
-			nbTestSucceed++;
+	int nTest = 3;
+	int nTestSucceed = 0;
+	for (int i = 0; i < 3; ++i)
+	{
+		if (myArray[i].a * myArray[i].b == myArray[i].c)
+		{
+			nTestSucceed++;
 		}
 	}
-	cout << nbTestSucceed << "/" << nbTest << " reussis.";
+	cout << nTestSucceed << "/" << nTest << " reussis.";
 }

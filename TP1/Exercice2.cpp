@@ -1,32 +1,33 @@
 /*
-Programme qui détermine la limite de la 
-suite Un+1 = sqrt(2 + Un) avec une 
-précision déterminée par l'utilisateur
+Programme qui determine la limite de la
+suite Un+1 = sqrt(2 + Un) avec une
+precision determinee par l'utilisateur
 */
 
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <cmath>
 using namespace std;
 
-double computeNextU(double Un)
-/*Calcul de Un+1*/
+double computeNextU(double un)
+/*Calcul de un+1*/
 {
-	return sqrt(2 + Un);
+	return sqrt(2 + un);
 };
 
 int main()
 {
-	cout << "Precision (nombre de chiffres après la virgule) : ";
-	int Precision = 5;
-	cin >> Precision;
-	double Un = 0.0;
-	int PowOfTen = pow(10, Precision);
-	while ( (computeNextU(Un) * PowOfTen) / PowOfTen != (Un * PowOfTen) / PowOfTen )
+	cout << "Precision (nombre de chiffres apres la virgule) : ";
+	int precision = 5;
+	cin >> precision;
+	double un = 0.0;
+	int powOfTen = pow(10, precision);
+	while ((computeNextU(un) * powOfTen) / powOfTen != (un * powOfTen) / powOfTen)
 	{
-		Un = computeNextU(Un);
+		un = computeNextU(un);
 	}
-	cout << "La limite est : " << fixed << setprecision(Precision) << Un << endl;
+	cout << "La limite est : " << fixed << setprecision(Precision) << un << endl;
 
 	return 0;
 }
