@@ -9,6 +9,7 @@ dans un std::array deja trie.
 #include <string>
 using namespace std;
 
+const int SIZE = 6;
 int getValue()
 {
 	while (true)
@@ -31,7 +32,7 @@ int getValue()
 	}
 }
 
-std::array<int, 6> insertValue(std::array<int, 6> myArray, int myValue, int nElement)
+std::array<int, SIZE> insertValue(std::array<int, SIZE> myArray, int myValue, int nElement)
 {
 	for (int i = nElement - 1; i >= 0; --i)
 	{
@@ -56,7 +57,7 @@ std::array<int, 6> insertValue(std::array<int, 6> myArray, int myValue, int nEle
 
 int main()
 {
-	array<int, 6> myArray = {1, 3, 4, 7, 9};
+	array<int, SIZE> myArray = {1, 3, 4, 7, 9};
 	int nElement = 5;
 	int myValue = getValue();
 	cout << "Le tableau, avant insertion est : {";

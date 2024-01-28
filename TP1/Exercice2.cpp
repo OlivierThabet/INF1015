@@ -18,16 +18,14 @@ double computeNextU(double un)
 
 int main()
 {
-	cout << "Precision (nombre de chiffres apres la virgule) : ";
-	int precision = 5;
-	cin >> precision;
+	const int PRECISION = 5;
 	double un = 0.0;
-	int powOfTen = pow(10, precision);
+	int powOfTen = pow(10, PRECISION);
 	while ((computeNextU(un) * powOfTen) / powOfTen != (un * powOfTen) / powOfTen)
 	{
 		un = computeNextU(un);
 	}
-	cout << "La limite est : " << fixed << setprecision(Precision) << un << endl;
+	cout << "La limite est : " << fixed << setprecision(PRECISION) << un << endl;
 
 	return 0;
 }
