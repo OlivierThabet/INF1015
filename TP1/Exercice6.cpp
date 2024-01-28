@@ -1,0 +1,104 @@
+/*
+Programme qui détermine le gagnant
+pour une partie de tic-tac-toe
+*/
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <array>
+using namespace std;
+
+string searchHorizontal(array<string, 3> game) {
+	for (int i = 0; i < game.size(); ++i) {
+		int nbO = 0;
+		int nbX = 0;
+		for (int j = 0; j < game.size(); ++j) {
+			if (game[i][j] == 'x') {
+				nbX++;
+			}
+			else if (game[i][j] == 'O') {
+				nbO++;
+			}
+		}
+		if (nbX == 3) {return "Le joueur 1 gagne"; }
+		if (nbO == 3) {return "Le joueur 2 gagne"; }
+	}
+	return "Egalite";
+}
+
+string searchVertical(array<string, 3> game) {
+	for (int j = 0; j < game.size(); ++j) {
+		int nbO = 0;
+		int nbX = 0;
+		for (int i = 0; i < game.size(); ++i) {
+			if (game[i][j] == 'x') {
+				nbX++;
+			}
+			else if (game[i][j] == 'o') {
+				nbO++;
+			}
+		}
+		if (nbX == 3) { return "Le joueur 1 gagne"; }
+		if (nbO == 3) { return "Le joueur 2 gagne"; }
+	}
+	return "Egalite";
+}
+
+string searchDiagonal(array<string, 3> game) {
+	for (int nbOfDiag = 0; nbOfDiag < 2; ++nbOfDiag) {
+		int nbO = 0;
+		int nbX = 0;
+		int j = 2 * nbOfDiag;
+		for (int i = 0; i < game.size(); ++i) {
+			if (game[i][j] == 'x') {
+				nbX++;
+			}
+			else if (game[i][j] == 'o') {
+				nbO++;
+			}
+			j += 1 - 2 * nbOfDiag;
+		}
+		if (nbX == 3) { return "Le joueur 1 gagne"; }
+		if (nbO == 3) { return "Le joueur 2 gagne"; }
+	}
+	return "Egalite";
+}
+
+int main() {
+	string nameFile;
+	cout << "Entrez le nom du fichier : ";
+	getline(cin, nameFile);
+	ifstream file("grilles/" + nameFile);
+	if (file.is_open()) {
+		string line;
+		array<string, 3> game;
+		int nbOfLine = 0;
+		while (getline(file, line)) {
+			cout << line << endl;
+			string line_i = "";
+			line_i += line[0];
+			line_i += line[2];
+			line_i += line[4];
+			game[nbOfLine] = line_i;
+			nbOfLine++;
+		}
+		string result;
+		result = searchVertical(game);
+		if (result == "Egalite") {
+			result = searchHorizontal(game);
+			if (result == "Egalite") {
+				result = searchDiagonal(game);
+				cout << result;
+			}
+			else { cout << result; }
+		}
+		else { cout << result; }
+	}
+	else {
+		cout << "Le fichier n'a pas pu etre ouvert";
+	}
+
+
+	return 0;
+}
