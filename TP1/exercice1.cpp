@@ -1,7 +1,7 @@
 /*
-Programme qui détermine le mot le plus
+Programme qui dÃ©termine le mot le plus
 petit, le mot le plus grand et la taille
-moyenne des mots pour une phrase donnée
+moyenne des mots pour une phrase donnÃ©e
 */
 
 #include <iostream>
@@ -16,7 +16,7 @@ int main()
 	string SmallestWord = Sentence;
 	string BiggestWord = "";
 	double MeanLenWords = 0;
-	double NbOfWords = 0;
+	int NbOfWords = 0;
 	string CurrentWord = "";
 	for (char charac : Sentence)
 	{
