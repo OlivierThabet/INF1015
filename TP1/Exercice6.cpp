@@ -13,24 +13,24 @@ string searchHorizontal(array<string, 3> game)
 {
 	for (int i = 0; i < game.size(); ++i)
 	{
-		int nbO = 0;
-		int nbX = 0;
+		int nO = 0;
+		int nX = 0;
 		for (int j = 0; j < game.size(); ++j)
 		{
 			if (game[i][j] == 'x')
 			{
-				nbX++;
+				nX++;
 			}
 			else if (game[i][j] == 'O')
 			{
-				nbO++;
+				nO++;
 			}
 		}
-		if (nbX == 3)
+		if (nX == 3)
 		{
 			return "Le joueur 1 gagne";
 		}
-		if (nbO == 3)
+		if (nO == 3)
 		{
 			return "Le joueur 2 gagne";
 		}
@@ -108,7 +108,7 @@ int main()
 	{
 		string line;
 		array<string, 3> game;
-		int nbOfLine = 0;
+		int nOfLine = 0;
 		while (getline(file, line))
 		{
 			cout << line << endl;
@@ -116,8 +116,8 @@ int main()
 			line_i += line[0];
 			line_i += line[2];
 			line_i += line[4];
-			game[nbOfLine] = line_i;
-			nbOfLine++;
+			game[nOfLine] = line_i;
+			nOfLine++;
 		}
 		string result;
 		result = searchVertical(game);
