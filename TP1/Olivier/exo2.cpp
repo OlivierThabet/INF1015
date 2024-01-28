@@ -15,11 +15,14 @@ double suiteReelle()
 {
 
     double valeurDeLaSuite = VALEUR_INITIALE;
-    while (true)
+    double valeurDeLaSuiteSuivante;
+    while (valeurDeLaSuite != valeurDeLaSuiteSuivante)
     {
-        valeurDeLaSuite = sqrt(2 + valeurDeLaSuite);
-        return valeurDeLaSuite;
+        valeurDeLaSuiteSuivante = sqrt(2 + valeurDeLaSuite);
+        valeurDeLaSuite = valeurDeLaSuiteSuivante;
+        
     }
+    return valeurDeLaSuite;
 }
 
 double nombreArrondi(double nombreAArrondir, int nombreDeChiffreApresLaVirgule)

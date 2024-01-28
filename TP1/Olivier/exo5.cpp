@@ -10,11 +10,11 @@ d'essais dont il a eu besoin.
 #include <iostream>
 using namespace std;
 
-;
+const int N_MAXIMUM = 1000;
 int generateurDeNombre()
 {
     srand(time(0));
-    int nombreAleatoire = rand() % 1001;
+    int nombreAleatoire = rand() % (N_MAXIMUM+1);
     return nombreAleatoire;
 }
 
@@ -28,7 +28,7 @@ int main()
     {
         cout << "Entrez un nombre entier : ";
         cin >> essai;
-        if (essai < 0 | essai > 1000)
+        if (essai < 0 | essai > N_MAXIMUM)
         {
             continue;
         }
