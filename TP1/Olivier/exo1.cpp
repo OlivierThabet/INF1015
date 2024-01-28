@@ -1,3 +1,9 @@
+/*
+Programme qui détermine le mot le plus
+petit, le mot le plus grand et la taille
+moyenne des mots pour une phrase donnée
+*/
+
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -5,8 +11,12 @@ using namespace std;
 
 int main()
 {
-    string phrase, mot, plusPetitMot = "", plusGrandMot = "";
-    int longueurTotalePhrase, nombreDeMotsDansPhrase = 0;
+    string phrase,
+        mot,
+        plusPetitMot = "",
+        plusGrandMot = "";
+    int longueurTotalePhrase,
+        nombreDeMotsDansPhrase = 0;
     cout << "Saisissez une phrase : ";
     getline(cin, phrase);
     istringstream mots(phrase);

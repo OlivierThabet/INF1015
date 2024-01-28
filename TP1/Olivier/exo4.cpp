@@ -1,3 +1,9 @@
+/*
+Programme qui effectue la multiplication
+russe pour deux nombres et qui verifie cette
+derniere au moyen de trois tests.
+*/
+
 #include <iostream>
 using namespace std;
 

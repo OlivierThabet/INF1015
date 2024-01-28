@@ -1,3 +1,12 @@
+/*
+Programme qui fait deviner un nombre entier
+a l'utilisateur. Il lui redemande si l'entree
+n'est pas valide. Il renvoie si l'entree est
+trop haute ou trop basse. Quand l'utilisateur
+trouve le resultat, on lui renvoie le nombre
+d'essais dont il a eu besoin.
+*/
+
 #include <iostream>
 using namespace std;
 

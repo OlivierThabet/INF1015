@@ -7,7 +7,7 @@ dans un std::array deja trie.
 #include <array>
 #include <iostream>
 #include <string>
-using namespace std;
+using namespace std;	
 
 const int SIZE = 6;
 int getValue()

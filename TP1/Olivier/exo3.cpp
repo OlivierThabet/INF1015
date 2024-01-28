@@ -1,9 +1,15 @@
+/*
+Programme qui demande un nombre entier
+a l'utilisateur et qui l'insere au bon endroit
+dans un std::array deja trie.
+*/
+
 #include <iostream>
 #include <string>
 #include <stdexcept>
 using namespace std;
 
-int TAILLE_DU_TABLEAU = 5;
+const int TAILLE_DU_TABLEAU = 5;
 
 void tableauTrie(int nombreAAjouter)
 {
