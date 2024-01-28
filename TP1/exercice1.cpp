@@ -1,50 +1,40 @@
 /*
-Programme qui détermine le mot le plus
+Prog ramme qui détermine le mot le plus
 petit, le mot le plus grand et la taille
 moyenne des mots pour une phrase donnée
 */
 
 #include <iostream>
 #include <string>
+#include <sstream>
 using namespace std;
 
 int main()
 {
-	cout << "Saisissez une phrase : ";
-	string sentence;
-	getline(cin, sentence);
-	string smallestWord = sentence;
-	string biggestWord = "";
-	double meanLenWords = 0;
-	int nOfWords = 0;
-	string currentWord = "";
-	for (char charac : sentence)
-	{
-		if (charac == ' ')
-		{
-			nOfWords++;
-			meanLenWords += currentWord.size();
-			if (currentWord.size() < smallestWord.size())
-			{
-				smallestWord = currentWord;
-			}
-			else if (currentWord.size() > biggestWord.size())
-			{
-				biggestWord = currentWord;
-			}
-			currentWord = "";
-		}
-		else
-		{
-			currentWord += charac;
-		}
-	}
-	nOfWords++;
-	meanLenWords += currentWord.size();
-	cout << "Le mot le plus court est : " << smallestWord << endl;
-	cout << "Le mot le plus long est : " << biggestWord << endl;
-	meanLenWords /= nOfWords;
-	cout << "La longueur moyenne est : " << meanLenWords << " lettres" << endl;
+    string sentence, word, smallestWord = "", biggestWord = "";
+    double totalLengthSentence = 0.0, numberOfWordsInSentence = 0.0;
+    cout << "Saisissez une phrase : ";
+    getline(cin, sentence);
+    istringstream words(sentence);
 
-	return 0;
+    while (words >> word)
+    {
+        if (smallestWord.empty() || word.length() < smallestWord.length())
+        {
+            smallestWord = word;
+        }
+        if (biggestWord.empty() || word.length() > biggestWord.length())
+        {
+            biggestWord = word;
+        }
+        totalLengthSentence += word.size();
+        numberOfWordsInSentence += 1;
+    }
+    double moyenneLongueurMots = totalLengthSentence / numberOfWordsInSentence;
+
+    cout << "Le mot le plus court est : " << smallestWord << "\n";
+    cout << "Le mot le plus long est : " << biggestWord << "\n";
+    cout << "La longueur moyenne est : " << moyenneLongueurMots << " lettres\n";
+
+    return 0;
 }
