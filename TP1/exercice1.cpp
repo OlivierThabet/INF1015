@@ -12,7 +12,7 @@ using namespace std;
 int main()
 {
     string sentence, word, smallestWord = "", biggestWord = "";
-    double totalLengthSentence = 0, numberOfWordsInSentence = 0;
+    double totalLengthSentence = 0.0, numberOfWordsInSentence = 0.0;
     cout << "Saisissez une phrase : ";
     getline(cin, sentence);
     istringstream words(sentence);
