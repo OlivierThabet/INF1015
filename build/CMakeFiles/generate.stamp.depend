@@ -1,0 +1,22 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/Compiler/MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake
+C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP2/Olivier/TD2-H24-Fichiers/CMakeLists.txt
+C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP2/Olivier/TD2-H24-Fichiers/cmake_cours.cmake
+C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/build/CMakeFiles/3.28.2/CMakeCXXCompiler.cmake
+C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/build/CMakeFiles/3.28.2/CMakeRCCompiler.cmake
+C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/build/CMakeFiles/3.28.2/CMakeSystem.cmake

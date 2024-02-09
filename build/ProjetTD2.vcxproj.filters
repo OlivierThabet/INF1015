@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\bibliotheque_cours\bibliotheque_cours.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\bibliotheque_cours\verification_allocation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\td2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\include\CodeCoverage_bugfix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\include\bibliotheque_cours.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\include\debogage_memoire.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\include\verification_allocation.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\structures.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9CEC7747-04AC-3186-B73D-FDB384C60A71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{8FF65B33-4A12-36E6-BFC1-D7B7B6818CC7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
