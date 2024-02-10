@@ -200,30 +200,6 @@ td2.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td2.cpp.s
 .PHONY : td2.cpp.s
 
-td2_bon.obj: td2_bon.cpp.obj
-.PHONY : td2_bon.obj
-
-# target to build an object file
-td2_bon.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td2_bon.cpp.obj
-.PHONY : td2_bon.cpp.obj
-
-td2_bon.i: td2_bon.cpp.i
-.PHONY : td2_bon.i
-
-# target to preprocess a source file
-td2_bon.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td2_bon.cpp.i
-.PHONY : td2_bon.cpp.i
-
-td2_bon.s: td2_bon.cpp.s
-.PHONY : td2_bon.s
-
-# target to generate assembly for a file
-td2_bon.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td2_bon.cpp.s
-.PHONY : td2_bon.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -242,9 +218,6 @@ help:
 	@echo ... td2.obj
 	@echo ... td2.i
 	@echo ... td2.s
-	@echo ... td2_bon.obj
-	@echo ... td2_bon.i
-	@echo ... td2_bon.s
 .PHONY : help
 
 

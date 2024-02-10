@@ -16,15 +16,15 @@ public:
 	Film **elements = nullptr;
 	void ajouterFilm(Film *film);
 	void supprimerFilm(const Film *film);
-	Acteur *trouverActeur(string nomActeur) const;
-	Acteur *lireActeur(istream &fichier);
-	Film *lireFilm(istream &fichier);
+	Acteur* trouverActeur(const string nomActeur)const;
+	Acteur* lireActeur(istream &fichier);
+	Film* lireFilm(istream &fichier);
 	void detruireFilm(Film *film);
 	void detruireListeFilms();
-	void afficherActeur(const Acteur &acteur) const;
-	void afficherFilm(const Film &film) const;
+	void afficherActeur(const Acteur &acteur)const;
+	void afficherFilm(const Film &film)const;
 	void afficherListeFilms() const;
-	void afficherFilmographieActeur(const string &nomActeur) const;
+	void afficherFilmographieActeur(const string &nomActeur)const;
 
 	int getNElements() const
 	{
@@ -37,6 +37,7 @@ public:
 private:
 	int nElements_ = 0;
 	int capacite_ = 0;
+	
 };
 
 struct ListeActeurs

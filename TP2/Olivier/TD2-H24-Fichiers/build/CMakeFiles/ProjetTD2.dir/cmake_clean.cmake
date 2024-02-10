@@ -5,8 +5,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj.d"
   "CMakeFiles/ProjetTD2.dir/td2.cpp.obj"
   "CMakeFiles/ProjetTD2.dir/td2.cpp.obj.d"
-  "CMakeFiles/ProjetTD2.dir/td2_bon.cpp.obj"
-  "CMakeFiles/ProjetTD2.dir/td2_bon.cpp.obj.d"
   "ProjetTD2.exe"
   "ProjetTD2.exe.manifest"
   "ProjetTD2.pdb"
