@@ -108,7 +108,7 @@ void ListeFilms::supprimerFilm(const Film *film)
 }
 
 // TODO: Une fonction pour trouver un Acteur par son nom dans une ListeFilms, qui retourne un pointeur vers l'acteur, ou nullptr si l'acteur n'est pas trouvé.  Devrait utiliser span.
-Acteur *ListeFilms::trouverActeur(const string &nomActeur)const
+Acteur* ListeFilms::trouverActeur(string nomActeur)const
 {
 	if (getNElements() != 0)
 	{
@@ -318,7 +318,7 @@ int main()
 	cout << ligneDeSeparation << "L'année de naissance de Benedict Cumberbatch:" << endl;
 	// TODO: Modifier l'année de naissance de Benedict Cumberbatch pour être 1976 (elle était 0 dans les données lues du fichier).  Vous ne pouvez pas supposer l'ordre des films et des acteurs dans les listes, il faut y aller par son nom.
 	listeFilms.trouverActeur("Benedict Cumberbatch")->anneeNaissance = 1976;
-	listeFilms.afficherActeur(*trouverActeur("Benedict Cumberbatch"));
+	listeFilms.afficherActeur(*listeFilms.trouverActeur("Benedict Cumberbatch"));
 
 	cout << ligneDeSeparation << "Liste des films où Benedict Cumberbatch joue sont:" << endl;
 	// TODO: Afficher la liste des films où Benedict Cumberbatch joue.  Il devrait y avoir Le Hobbit et Le jeu de l'imitation.

@@ -16,7 +16,7 @@ public:
 	Film **elements = nullptr;
 	void ajouterFilm(Film *film);
 	void supprimerFilm(const Film *film);
-	Acteur* trouverActeur(const string nomActeur)const;
+	Acteur* trouverActeur(string nomActeur)const;
 	Acteur* lireActeur(istream &fichier);
 	Film* lireFilm(istream &fichier);
 	void detruireFilm(Film *film);
