@@ -68,7 +68,7 @@ void ListeFilms::ajouterFilm(Film *film)
 	int nElements = getNElements();
 	if (capacite < nElements + 1)
 	{
-		capacite_ = max(capacite * 2, 1);
+		setCapacite(max(capacite * 2, 1));
 		Film **nouveauxElements;
 		nouveauxElements = new Film *[getCapacite()];
 		for (int i = 0; i < nElements; i++)
@@ -84,12 +84,12 @@ void ListeFilms::ajouterFilm(Film *film)
 		}*/
 		nouveauxElements = nullptr;
 		delete[] nouveauxElements;
-		nElements_++;
+		incrementerNElements();
 	}
 	else
 	{
 		elements[nElements] = film;
-		nElements_++;
+		incrementerNElements();
 	}
 }
 
@@ -101,14 +101,14 @@ void ListeFilms::supprimerFilm(const Film *film)
 		if (elements[i] == film)
 		{
 			elements[i] = nullptr;
-			nElements_--;
+			decrementerNElements();
 			break;
 		}
 	}
 }
 
 // TODO: Une fonctions pour trouver un Acteur par son nom dans une ListeFilms, qui retourne un pointeur vers l'acteur, ou nullptr si l'acteur n'est pas trouvé.  Devrait utiliser span.
-Acteur* ListeFilms::trouverActeur(string nomActeur)const
+Acteur *ListeFilms::trouverActeur(string nomActeur) const
 {
 	if (getNElements() != 0)
 	{
@@ -187,10 +187,10 @@ ListeFilms ListeFilms::creerListe(string nomFichier)
 
 	// TODO: Créer une liste de films vide.
 	ListeFilms listeFilm;
-	listeFilm.nElements_ = 0;
-	listeFilm.capacite_ = max(2 * nElements, 1);
+	listeFilm.setNElements(0);
+	listeFilm.setCapacite(max(2 * listeFilm.getNElements(), 1));
 	listeFilm.elements = new Film *[listeFilm.getCapacite()];
-	for (int i = 0; i < nElements; i++)
+	for (int i = 0; i < listeFilm.getNElements(); i++)
 	{
 		// TODO: Ajouter le film à la liste.
 		Film *film = new Film;
@@ -220,7 +220,7 @@ void ListeFilms::detruireFilm(Film *film)
 	{
 		for (auto &acteurListe : span(elements[indice_film]->acteurs.elements, elements[indice_film]->acteurs.nElements))
 		{
-			if (acteurListe->joueDans.nElements_ < 2)
+			if (acteurListe->joueDans.getNElements() < 2)
 			{
 				delete acteurListe;
 				elements[indice_film]->acteurs.nElements--;
@@ -231,7 +231,7 @@ void ListeFilms::detruireFilm(Film *film)
 			}
 		}
 		delete elements[indice_film];
-		nElements_--;
+		decrementerNElements();
 		elements[indice_film] = elements[getNElements() - 1];
 		elements[getNElements() - 1] = nullptr;
 	}

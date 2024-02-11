@@ -34,6 +34,26 @@ public:
 	{
 		return capacite_;
 	}
+	void incrementerNElements(){
+	nElements_++;
+	}
+	void setNElements(int valeur)
+	{
+		nElements_ = valeur;
+	}
+	void decrementerNElements(){
+		nElements_--;
+	}
+	void setCapacite(int valeur){
+		capacite_ = valeur;
+	}
+	/*void decrementerCapacite(){
+		capacite_--;
+	}
+	
+	void incrementerCapacite() {
+		capacite_++;
+	}*/
 private:
 	int nElements_ = 0;
 	int capacite_ = 0;
