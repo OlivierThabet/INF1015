@@ -1,4 +1,4 @@
-﻿#pragma region "Includes"//{
+#pragma region "Includes"//{
 #define _CRT_SECURE_NO_WARNINGS // On permet d'utiliser les fonctions de copies de chaînes qui sont considérées non sécuritaires.
 
 #include "structures.hpp"      // Structures de données pour la collection de films en mémoire.
@@ -104,7 +104,7 @@ void ListeFilms::supprimerFilm(const Film* film)
 }
 
 //TODO: Une fonction pour trouver un Acteur par son nom dans une ListeFilms, qui retourne un pointeur vers l'acteur, ou nullptr si l'acteur n'est pas trouvé.  Devrait utiliser span.
-Acteur* ListeFilms::trouverActeur(const string& nomActeur)const 
+Acteur* ListeFilms::trouverActeur(const string& nomActeur)const
 {
 	if (getNElements() != 0)
 	{
@@ -125,7 +125,7 @@ Acteur* ListeFilms::trouverActeur(const string& nomActeur)const
 	return nullptr;
 }
 
- 
+
 //TODO: Compléter les fonctions pour lire le fichier et créer/allouer une ListeFilms.  La ListeFilms devra être passée entre les fonctions, pour vérifier l'existence d'un Acteur avant de l'allouer à nouveau (cherché par nom en utilisant la fonction ci-dessus).
 Acteur* ListeFilms::lireActeur(istream& fichier)
 {
@@ -155,8 +155,8 @@ Film* ListeFilms::lireFilm(istream& fichier)
 	film.recette = int(lireUintTailleVariable(fichier));
 	film.acteurs.nElements = int(lireUintTailleVariable(fichier));
 	film.acteurs.elements = new Acteur * [film.acteurs.nElements];
-	Film* ptrFilm = new Film(film);  
-	for (int i = 0; i < ptrFilm->acteurs.nElements; i++) 
+	Film* ptrFilm = new Film(film);
+	for (int i = 0; i < ptrFilm->acteurs.nElements; i++)
 	{
 		ptrFilm->acteurs.elements[i] = lireActeur(fichier);
 		ptrFilm->acteurs.elements[i]->joueDans.ajouterFilm(ptrFilm);
@@ -174,7 +174,7 @@ ListeFilms ListeFilms::creerListe(string nomFichier)
 	//TODO: Créer une liste de films vide.
 	ListeFilms listeFilm;
 	listeFilm.setNElements(0);
-	listeFilm.setCapacite(max(2 * nElements,1));
+	listeFilm.setCapacite(max(2 * nElements, 1));
 	listeFilm.elements = new Film * [listeFilm.getCapacite()];
 	for (int i = 0; i < nElements; i++) {
 		//TODO: Ajouter le film à la liste.
@@ -205,7 +205,7 @@ void ListeFilms::detruireFilm(Film* film)
 				delete acteurListe;
 				elements[indice_film]->acteurs.nElements--;
 			}
-			else 
+			else
 			{
 				acteurListe->joueDans.supprimerFilm(film);
 			}
@@ -216,7 +216,7 @@ void ListeFilms::detruireFilm(Film* film)
 
 		elements[indice_film] = elements[getNElements() - 1];
 		elements[getNElements() - 1] = nullptr;
-		delete elements[getNElements()- 1];
+		delete elements[getNElements() - 1];
 
 		decrementerNElements();
 	}
@@ -228,7 +228,7 @@ void ListeFilms::detruireListeFilms()
 	int numeroDestruction = 0;
 	while (getNElements() != 0)
 	{
-		if (elements[numeroDestruction] !=nullptr)
+		if (elements[numeroDestruction] != nullptr)
 		{
 			detruireFilm(elements[numeroDestruction]);
 		}
@@ -262,7 +262,7 @@ void ListeFilms::afficherListeFilms() const
 	static const string ligneDeSeparation = { "      ──────────────────────────" };
 	int compteurElements = 0;
 	//TODO: Changer le for pour utiliser un span.
-	for (const auto& film : span(elements,getCapacite())) {
+	for (const auto& film : span(elements, getCapacite())) {
 		//TODO: Afficher le film.
 		if (film != nullptr)
 		{
@@ -279,7 +279,7 @@ void ListeFilms::afficherListeFilms() const
 
 
 
-void ListeFilms::afficherFilmographieActeur(const string& nomActeur)const 
+void ListeFilms::afficherFilmographieActeur(const string& nomActeur)const
 {
 	//TODO: Utiliser votre fonction pour trouver l'acteur (au lieu de le mettre à nullptr).
 	const Acteur* acteur = trouverActeur(nomActeur);
@@ -303,7 +303,7 @@ int main()
 
 	//TODO: La ligne suivante devrait lire le fichier binaire en allouant la mémoire nécessaire.  Devrait afficher les noms de 20 acteurs sans doublons (par l'affichage pour fins de débogage dans votre fonction lireActeur).
 	ListeFilms listeFilms = ListeFilms::creerListe("films.bin");
-	
+
 	cout << ligneDeSeparation << "Le premier film de la liste est:" << endl;
 	//TODO: Afficher le premier film de la liste.  Devrait être Alien.
 	cout << listeFilms.elements[0]->titre << endl;
@@ -315,7 +315,7 @@ int main()
 	cout << ligneDeSeparation << "L'année de naissance de Benedict Cumberbatch:" << endl;
 	//TODO: Modifier l'année de naissance de Benedict Cumberbatch pour être 1976 (elle était 0 dans les données lues du fichier).  Vous ne pouvez pas supposer l'ordre des films et des acteurs dans les listes, il faut y aller par son nom.
 	listeFilms.trouverActeur("Benedict Cumberbatch")->anneeNaissance = 1976;
-	listeFilms.afficherActeur(listeFilms.*trouverActeur("Benedict Cumberbatch"));
+	listeFilms.afficherActeur(*listeFilms.trouverActeur("Benedict Cumberbatch"));
 
 	cout << ligneDeSeparation << "Liste des films où Benedict Cumberbatch joue sont:" << endl;
 	//TODO: Afficher la liste des films où Benedict Cumberbatch joue.  Il devrait y avoir Le Hobbit et Le jeu de l'imitation.
