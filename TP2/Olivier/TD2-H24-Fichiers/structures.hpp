@@ -1,7 +1,9 @@
 #pragma once
 // Structures mémoires pour une collection de films.
-
+#include <istream>
 #include <string>
+
+using namespace std;
 
 struct Film;
 struct Acteur; // Permet d'utiliser les types alors qu'ils seront défini après.

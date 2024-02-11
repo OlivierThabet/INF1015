@@ -178,7 +178,7 @@ Film *ListeFilms::lireFilm(istream &fichier)
 	return ptrFilm; // TODO: Retourner le pointeur vers le nouveau film.
 }
 
-ListeFilms ListeFilms::creerListe(string nomFichier)
+ListeFilms ListeFilms::creerListe(const string nomFichier)
 {
 	ifstream fichier(nomFichier, ios::binary);
 	fichier.exceptions(ios::failbit);
