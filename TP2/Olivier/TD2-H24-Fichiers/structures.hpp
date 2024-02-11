@@ -13,9 +13,9 @@ class ListeFilms
 public:
 	static ListeFilms creerListe(string nomFichier);
 	// Pointeur vers un tableau de Film*, chaque Film* pointant vers un Film.
-
+Film **elements = nullptr;
 	ListeFilms(){};
-	Film **elements = nullptr;
+	
 	void ajouterFilm(Film *film);
 	void supprimerFilm(const Film *film);
 	Acteur* trouverActeur(const string& nomActeur)const;
@@ -28,14 +28,6 @@ public:
 	void afficherListeFilms() const;
 	void afficherFilmographieActeur(const string &nomActeur)const;
 
-	int getNElements() const
-	{
-		return nElements_;
-	}
-	int getCapacite() const
-	{
-		return capacite_;
-	}
 	void incrementerNElements(){
 	nElements_++;
 	}
@@ -53,6 +45,7 @@ public:
 private:
 	int nElements_ = 0;
 	int capacite_ = 0;
+	
 	
 };
 

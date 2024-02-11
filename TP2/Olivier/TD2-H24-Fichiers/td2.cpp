@@ -1,4 +1,4 @@
-#pragma region "Includes"//{
+﻿#pragma region "Includes"//{
 #define _CRT_SECURE_NO_WARNINGS // On permet d'utiliser les fonctions de copies de chaînes qui sont considérées non sécuritaires.
 
 #include "structures.hpp"      // Structures de données pour la collection de films en mémoire.
@@ -60,12 +60,12 @@ string lireString(istream& fichier)
 //TODO: Une fonction pour ajouter un Film à une ListeFilms, le film existant déjà; on veut uniquement ajouter le pointeur vers le film existant.  Cette fonction doit doubler la taille du tableau alloué, avec au minimum un élément, dans le cas où la capacité est insuffisante pour ajouter l'élément.  Il faut alors allouer un nouveau tableau plus grand, copier ce qu'il y avait dans l'ancien, et éliminer l'ancien trop petit.  Cette fonction ne doit copier aucun Film ni Acteur, elle doit copier uniquement des pointeurs.
 void ListeFilms::ajouterFilm(Film* film)
 {
-	int capacite = getCapacite();
-	int nElements = getNElements();
+	int capacite = capacite_;
+	int nElements = nElements_;
 	if (capacite < nElements + 1)
 	{
 		setCapacite(max(capacite * 2, 1));
-		Film** nouveauxElements = new Film * [getCapacite()];
+		Film** nouveauxElements = new Film * [capacite_];
 		for (int i = 0; i < nElements; i++)
 		{
 			nouveauxElements[i] = elements[i];
@@ -86,14 +86,14 @@ void ListeFilms::ajouterFilm(Film* film)
 //TODO: Une fonction pour enlever un Film d'une ListeFilms (enlever le pointeur) sans effacer le film; la fonction prenant en paramètre un pointeur vers le film à enlever.  L'ordre des films dans la liste n'a pas à être conservé.
 void ListeFilms::supprimerFilm(const Film* film)
 {
-	for (int i = 0; i < getNElements(); i++)
+	for (int i = 0; i < nElements_; i++)
 	{
 		if (elements[i] == film)
 		{
 			elements[i] = nullptr;
-			elements[i] = elements[getNElements() - 1];
-			elements[getNElements() - 1] = nullptr;
-			delete elements[getNElements() - 1];
+			elements[i] = elements[nElements_ - 1];
+			elements[nElements_ - 1] = nullptr;
+			delete elements[nElements_ - 1];
 
 			decrementerNElements();
 
@@ -106,9 +106,9 @@ void ListeFilms::supprimerFilm(const Film* film)
 //TODO: Une fonction pour trouver un Acteur par son nom dans une ListeFilms, qui retourne un pointeur vers l'acteur, ou nullptr si l'acteur n'est pas trouvé.  Devrait utiliser span.
 Acteur* ListeFilms::trouverActeur(const string& nomActeur)const
 {
-	if (getNElements() != 0)
+	if (nElements_ != 0)
 	{
-		for (const auto& film : span(elements, getNElements()))
+		for (const auto& film : span(elements, nElements_))
 		{
 			if (film->acteurs.nElements != 0)
 			{
@@ -173,9 +173,9 @@ ListeFilms ListeFilms::creerListe(string nomFichier)
 
 	//TODO: Créer une liste de films vide.
 	ListeFilms listeFilm;
-	listeFilm.setNElements(0);
-	listeFilm.setCapacite(max(2 * nElements, 1));
-	listeFilm.elements = new Film * [listeFilm.getCapacite()];
+	listeFilm.nElements_ = 0;
+	listeFilm.capacite_ = max(2 * nElements, 1);
+	listeFilm.elements = new Film * [listeFilm.capacite_];
 	for (int i = 0; i < nElements; i++) {
 		//TODO: Ajouter le film à la liste.
 		listeFilm.ajouterFilm(listeFilm.lireFilm(fichier));
@@ -187,7 +187,7 @@ ListeFilms ListeFilms::creerListe(string nomFichier)
 void ListeFilms::detruireFilm(Film* film)
 {
 	int indice_film = -1;
-	for (int i = 0; i < getNElements(); i++)
+	for (int i = 0; i < nElements_; i++)
 	{
 		if (elements[i] == film)
 		{
@@ -199,7 +199,7 @@ void ListeFilms::detruireFilm(Film* film)
 	{
 		for (auto& acteurListe : span(elements[indice_film]->acteurs.elements, elements[indice_film]->acteurs.nElements))
 		{
-			if (acteurListe->joueDans.getNElements() < 2)
+			if (acteurListe->joueDans.nElements_ < 2)
 			{
 				delete[] acteurListe->joueDans.elements;
 				delete acteurListe;
@@ -214,9 +214,9 @@ void ListeFilms::detruireFilm(Film* film)
 		delete[] elements[indice_film]->acteurs.elements;
 		delete elements[indice_film];
 
-		elements[indice_film] = elements[getNElements() - 1];
-		elements[getNElements() - 1] = nullptr;
-		delete elements[getNElements() - 1];
+		elements[indice_film] = elements[nElements_ - 1];
+		elements[nElements_ - 1] = nullptr;
+		delete elements[nElements_ - 1];
 
 		decrementerNElements();
 	}
@@ -226,7 +226,7 @@ void ListeFilms::detruireFilm(Film* film)
 void ListeFilms::detruireListeFilms()
 {
 	int numeroDestruction = 0;
-	while (getNElements() != 0)
+	while (nElements_ != 0)
 	{
 		if (elements[numeroDestruction] != nullptr)
 		{
@@ -262,14 +262,14 @@ void ListeFilms::afficherListeFilms() const
 	static const string ligneDeSeparation = { "      ──────────────────────────" };
 	int compteurElements = 0;
 	//TODO: Changer le for pour utiliser un span.
-	for (const auto& film : span(elements, getCapacite())) {
+	for (const auto& film : span(elements, capacite_)) {
 		//TODO: Afficher le film.
 		if (film != nullptr)
 		{
 			afficherFilm(*film);
 			cout << ligneDeSeparation << endl;
 			compteurElements++;
-			if (compteurElements == getNElements())
+			if (compteurElements == nElements_)
 			{
 				break;
 			}
