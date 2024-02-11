@@ -107,7 +107,7 @@ void ListeFilms::supprimerFilm(const Film *film)
 	}
 }
 
-// TODO: Une fonction pour trouver un Acteur par son nom dans une ListeFilms, qui retourne un pointeur vers l'acteur, ou nullptr si l'acteur n'est pas trouvé.  Devrait utiliser span.
+// TODO: Une fonctions pour trouver un Acteur par son nom dans une ListeFilms, qui retourne un pointeur vers l'acteur, ou nullptr si l'acteur n'est pas trouvé.  Devrait utiliser span.
 Acteur* ListeFilms::trouverActeur(string nomActeur)const
 {
 	if (getNElements() != 0)
