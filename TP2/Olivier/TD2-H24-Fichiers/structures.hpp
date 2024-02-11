@@ -18,7 +18,7 @@ public:
 	Film **elements = nullptr;
 	void ajouterFilm(Film *film);
 	void supprimerFilm(const Film *film);
-	Acteur* trouverActeur(string nomActeur)const;
+	Acteur* trouverActeur(const string& nomActeur)const;
 	Acteur* lireActeur(istream &fichier);
 	Film* lireFilm(istream &fichier);
 	void detruireFilm(Film *film);
@@ -49,13 +49,7 @@ public:
 	void setCapacite(int valeur){
 		capacite_ = valeur;
 	}
-	/*void decrementerCapacite(){
-		capacite_--;
-	}
 	
-	void incrementerCapacite() {
-		capacite_++;
-	}*/
 private:
 	int nElements_ = 0;
 	int capacite_ = 0;
