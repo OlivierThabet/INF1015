@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/olivi/OneDrive/Desktop/INF1015/INF1015/TP1/Olivier",
-      "program": "c:/Users/olivi/OneDrive/Desktop/INF1015/INF1015/TP1/Olivier/build/Debug/outDebug",
+      "cwd": "c:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP1/Olivier",
+      "program": "c:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP1/Olivier/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
