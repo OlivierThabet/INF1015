@@ -68,16 +68,16 @@ void ListeFilms::ajouterFilm(Film* film)
 		Film** nouveauxElements = new Film * [capacite_];
 		for (int i = 0; i < nElements; i++)
 		{
-			nouveauxElements[i] = elements[i];
+			nouveauxElements[i] = elements_[i];
 		}
 		nouveauxElements[nElements] = film;
-		delete[] elements;
-		elements = nouveauxElements;
+		delete[] elements_;
+		elements_ = nouveauxElements;
 		incrementerNElements();
 	}
 	else
 	{
-		elements[nElements] = film;
+		elements_[nElements] = film;
 		incrementerNElements();
 	}
 
@@ -88,12 +88,12 @@ void ListeFilms::supprimerFilm(const Film* film)
 {
 	for (int i = 0; i < nElements_; i++)
 	{
-		if (elements[i] == film)
+		if (elements_[i] == film)
 		{
-			elements[i] = nullptr;
-			elements[i] = elements[nElements_ - 1];
-			elements[nElements_ - 1] = nullptr;
-			delete elements[nElements_ - 1];
+			elements_[i] = nullptr;
+			elements_[i] = elements_[nElements_ - 1];
+			elements_[nElements_ - 1] = nullptr;
+			delete elements_[nElements_ - 1];
 
 			decrementerNElements();
 
@@ -108,7 +108,7 @@ Acteur* ListeFilms::trouverActeur(const string& nomActeur)const
 {
 	if (nElements_ != 0)
 	{
-		for (const auto& film : span(elements, nElements_))
+		for (const auto& film : span(elements_, nElements_))
 		{
 			if (film->acteurs.nElements != 0)
 			{
@@ -135,7 +135,7 @@ Acteur* ListeFilms::lireActeur(istream& fichier)
 	acteur.sexe = char(lireUintTailleVariable(fichier));
 	acteur.joueDans.setNElements(0);
 	acteur.joueDans.setCapacite(0);
-	acteur.joueDans.elements = nullptr;
+	acteur.joueDans.elements_ = nullptr;
 	//TODO: Retourner un pointeur soit vers un acteur existant ou un nouvel acteur ayant les bonnes informations, selon si l'acteur existait déjà.  Pour fins de débogage, affichez les noms des acteurs crées; vous ne devriez pas voir le même nom d'acteur affiché deux fois pour la création.
 	Acteur* ptrActeur = trouverActeur(acteur.nom);
 	if (ptrActeur == nullptr)
@@ -175,7 +175,7 @@ ListeFilms ListeFilms::creerListe(string nomFichier)
 	ListeFilms listeFilm;
 	listeFilm.nElements_ = 0;
 	listeFilm.capacite_ = max(2 * nElements, 1);
-	listeFilm.elements = new Film * [listeFilm.capacite_];
+	listeFilm.elements_ = new Film * [listeFilm.capacite_];
 	for (int i = 0; i < nElements; i++) {
 		//TODO: Ajouter le film à la liste.
 		listeFilm.ajouterFilm(listeFilm.lireFilm(fichier));
@@ -189,7 +189,7 @@ void ListeFilms::detruireFilm(Film* film)
 	int indice_film = -1;
 	for (int i = 0; i < nElements_; i++)
 	{
-		if (elements[i] == film)
+		if (elements_[i] == film)
 		{
 			indice_film = i;
 			break;
@@ -197,13 +197,13 @@ void ListeFilms::detruireFilm(Film* film)
 	}
 	if (indice_film != -1)
 	{
-		for (auto& acteurListe : span(elements[indice_film]->acteurs.elements, elements[indice_film]->acteurs.nElements))
+		for (auto& acteurListe : span(elements_[indice_film]->acteurs.elements, elements_[indice_film]->acteurs.nElements))
 		{
 			if (acteurListe->joueDans.nElements_ < 2)
 			{
-				delete[] acteurListe->joueDans.elements;
+				delete[] acteurListe->joueDans.elements_;
 				delete acteurListe;
-				elements[indice_film]->acteurs.nElements--;
+				elements_[indice_film]->acteurs.nElements--;
 			}
 			else
 			{
@@ -211,12 +211,12 @@ void ListeFilms::detruireFilm(Film* film)
 			}
 		}
 
-		delete[] elements[indice_film]->acteurs.elements;
-		delete elements[indice_film];
+		delete[] elements_[indice_film]->acteurs.elements;
+		delete elements_[indice_film];
 
-		elements[indice_film] = elements[nElements_ - 1];
-		elements[nElements_ - 1] = nullptr;
-		delete elements[nElements_ - 1];
+		elements_[indice_film] = elements_[nElements_ - 1];
+		elements_[nElements_ - 1] = nullptr;
+		delete elements_[nElements_ - 1];
 
 		decrementerNElements();
 	}
@@ -228,17 +228,17 @@ void ListeFilms::detruireListeFilms()
 	int numeroDestruction = 0;
 	while (nElements_ != 0)
 	{
-		if (elements[numeroDestruction] != nullptr)
+		if (elements_[numeroDestruction] != nullptr)
 		{
-			detruireFilm(elements[numeroDestruction]);
+			detruireFilm(elements_[numeroDestruction]);
 		}
 		else
 		{
-			delete elements[numeroDestruction];
+			delete elements_[numeroDestruction];
 			numeroDestruction++;
 		}
 	}
-	delete[] elements;
+	delete[] elements_;
 }
 
 
@@ -262,7 +262,7 @@ void ListeFilms::afficherListeFilms() const
 	static const string ligneDeSeparation = { "      ──────────────────────────" };
 	int compteurElements = 0;
 	//TODO: Changer le for pour utiliser un span.
-	for (const auto& film : span(elements, capacite_)) {
+	for (const auto& film : span(elements_, capacite_)) {
 		//TODO: Afficher le film.
 		if (film != nullptr)
 		{
@@ -306,7 +306,7 @@ int main()
 
 	cout << ligneDeSeparation << "Le premier film de la liste est:" << endl;
 	//TODO: Afficher le premier film de la liste.  Devrait être Alien.
-	cout << listeFilms.elements[0]->titre << endl;
+	cout << listeFilms.getElements()[0]->titre << endl;
 
 	cout << ligneDeSeparation << "Les films sont:" << endl;
 	//TODO: Afficher la liste des films.  Il devrait y en avoir 7.
@@ -322,7 +322,7 @@ int main()
 	listeFilms.afficherFilmographieActeur("Benedict Cumberbatch");
 
 	//TODO: Détruire et enlever le premier film de la liste (Alien).  Ceci devrait "automatiquement" (par ce que font vos fonctions) détruire les acteurs Tom Skerritt et John Hurt, mais pas Sigourney Weaver puisqu'elle joue aussi dans Avatar.
-	listeFilms.detruireFilm(listeFilms.elements[0]);
+	listeFilms.detruireFilm(listeFilms.getElements()[0]);
 
 	cout << ligneDeSeparation << "Les films sont maintenant:" << endl;
 	//TODO: Afficher la liste des films.

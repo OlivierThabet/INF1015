@@ -13,7 +13,7 @@ class ListeFilms
 public:
 	static ListeFilms creerListe(string nomFichier);
 	// Pointeur vers un tableau de Film*, chaque Film* pointant vers un Film.
-Film **elements = nullptr;
+
 	ListeFilms(){};
 	
 	void ajouterFilm(Film *film);
@@ -41,10 +41,15 @@ Film **elements = nullptr;
 	void setCapacite(int valeur){
 		capacite_ = valeur;
 	}
+	Film** getElements()
+	{
+		return elements_;
+	}
 	
 private:
 	int nElements_ = 0;
 	int capacite_ = 0;
+	Film **elements_ = nullptr;
 	
 	
 };
