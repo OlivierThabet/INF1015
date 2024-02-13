@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers
+CMAKE_SOURCE_DIR = C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\build
+CMAKE_BINARY_DIR = C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\build\CMakeFiles C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\build\CMakeFiles C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -176,29 +176,29 @@ bibliotheque_cours/verification_allocation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.s
 .PHONY : bibliotheque_cours/verification_allocation.cpp.s
 
-td2.obj: td2.cpp.obj
-.PHONY : td2.obj
+td2_solutionnaire_2.obj: td2_solutionnaire_2.cpp.obj
+.PHONY : td2_solutionnaire_2.obj
 
 # target to build an object file
-td2.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td2.cpp.obj
-.PHONY : td2.cpp.obj
+td2_solutionnaire_2.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.obj
+.PHONY : td2_solutionnaire_2.cpp.obj
 
-td2.i: td2.cpp.i
-.PHONY : td2.i
+td2_solutionnaire_2.i: td2_solutionnaire_2.cpp.i
+.PHONY : td2_solutionnaire_2.i
 
 # target to preprocess a source file
-td2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td2.cpp.i
-.PHONY : td2.cpp.i
+td2_solutionnaire_2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.i
+.PHONY : td2_solutionnaire_2.cpp.i
 
-td2.s: td2.cpp.s
-.PHONY : td2.s
+td2_solutionnaire_2.s: td2_solutionnaire_2.cpp.s
+.PHONY : td2_solutionnaire_2.s
 
 # target to generate assembly for a file
-td2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td2.cpp.s
-.PHONY : td2.cpp.s
+td2_solutionnaire_2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.s
+.PHONY : td2_solutionnaire_2.cpp.s
 
 # Help Target
 help:
@@ -215,9 +215,9 @@ help:
 	@echo ... bibliotheque_cours/verification_allocation.obj
 	@echo ... bibliotheque_cours/verification_allocation.i
 	@echo ... bibliotheque_cours/verification_allocation.s
-	@echo ... td2.obj
-	@echo ... td2.i
-	@echo ... td2.s
+	@echo ... td2_solutionnaire_2.obj
+	@echo ... td2_solutionnaire_2.i
+	@echo ... td2_solutionnaire_2.s
 .PHONY : help
 
 

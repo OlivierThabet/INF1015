@@ -66,7 +66,7 @@ include CMakeFiles/ProjetTD2_couverture.dir/compiler_depend.make
 include CMakeFiles/ProjetTD2_couverture.dir/progress.make
 
 CMakeFiles/ProjetTD2_couverture: ProjetTD2.exe
-	C:\msys64\ucrt64\bin\gcov.exe -s  -r -f -m C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP2/Olivier/TD2-H24-Fichiers/build//CMakeFiles/ProjetTD2.dir/*.gcda
+	C:\msys64\ucrt64\bin\gcov.exe -s  -r -f -m C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP3/Olivier/TD2-H24-Fichiers/build//CMakeFiles/ProjetTD2.dir/*.gcda
 
 ProjetTD2_couverture: CMakeFiles/ProjetTD2_couverture
 ProjetTD2_couverture: CMakeFiles/ProjetTD2_couverture.dir/build.make

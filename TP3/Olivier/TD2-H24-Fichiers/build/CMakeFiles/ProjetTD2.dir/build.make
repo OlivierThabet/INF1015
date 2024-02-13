@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers
+CMAKE_SOURCE_DIR = C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\build
+CMAKE_BINARY_DIR = C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ProjetTD2.dir/depend.make
@@ -70,66 +70,66 @@ include CMakeFiles/ProjetTD2.dir/flags.make
 
 CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.obj: CMakeFiles/ProjetTD2.dir/flags.make
 CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.obj: CMakeFiles/ProjetTD2.dir/includes_CXX.rsp
-CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.obj: C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP2/Olivier/TD2-H24-Fichiers/bibliotheque_cours/bibliotheque_cours.cpp
+CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.obj: C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP3/Olivier/TD2-H24-Fichiers/bibliotheque_cours/bibliotheque_cours.cpp
 CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.obj: CMakeFiles/ProjetTD2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.obj -MF CMakeFiles\ProjetTD2.dir\bibliotheque_cours\bibliotheque_cours.cpp.obj.d -o CMakeFiles\ProjetTD2.dir\bibliotheque_cours\bibliotheque_cours.cpp.obj -c C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\bibliotheque_cours\bibliotheque_cours.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.obj -MF CMakeFiles\ProjetTD2.dir\bibliotheque_cours\bibliotheque_cours.cpp.obj.d -o CMakeFiles\ProjetTD2.dir\bibliotheque_cours\bibliotheque_cours.cpp.obj -c C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\bibliotheque_cours\bibliotheque_cours.cpp
 
 CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\bibliotheque_cours\bibliotheque_cours.cpp > CMakeFiles\ProjetTD2.dir\bibliotheque_cours\bibliotheque_cours.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\bibliotheque_cours\bibliotheque_cours.cpp > CMakeFiles\ProjetTD2.dir\bibliotheque_cours\bibliotheque_cours.cpp.i
 
 CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\bibliotheque_cours\bibliotheque_cours.cpp -o CMakeFiles\ProjetTD2.dir\bibliotheque_cours\bibliotheque_cours.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\bibliotheque_cours\bibliotheque_cours.cpp -o CMakeFiles\ProjetTD2.dir\bibliotheque_cours\bibliotheque_cours.cpp.s
 
 CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj: CMakeFiles/ProjetTD2.dir/flags.make
 CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj: CMakeFiles/ProjetTD2.dir/includes_CXX.rsp
-CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj: C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP2/Olivier/TD2-H24-Fichiers/bibliotheque_cours/verification_allocation.cpp
+CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj: C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP3/Olivier/TD2-H24-Fichiers/bibliotheque_cours/verification_allocation.cpp
 CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj: CMakeFiles/ProjetTD2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj -MF CMakeFiles\ProjetTD2.dir\bibliotheque_cours\verification_allocation.cpp.obj.d -o CMakeFiles\ProjetTD2.dir\bibliotheque_cours\verification_allocation.cpp.obj -c C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\bibliotheque_cours\verification_allocation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj -MF CMakeFiles\ProjetTD2.dir\bibliotheque_cours\verification_allocation.cpp.obj.d -o CMakeFiles\ProjetTD2.dir\bibliotheque_cours\verification_allocation.cpp.obj -c C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\bibliotheque_cours\verification_allocation.cpp
 
 CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\bibliotheque_cours\verification_allocation.cpp > CMakeFiles\ProjetTD2.dir\bibliotheque_cours\verification_allocation.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\bibliotheque_cours\verification_allocation.cpp > CMakeFiles\ProjetTD2.dir\bibliotheque_cours\verification_allocation.cpp.i
 
 CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\bibliotheque_cours\verification_allocation.cpp -o CMakeFiles\ProjetTD2.dir\bibliotheque_cours\verification_allocation.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\bibliotheque_cours\verification_allocation.cpp -o CMakeFiles\ProjetTD2.dir\bibliotheque_cours\verification_allocation.cpp.s
 
-CMakeFiles/ProjetTD2.dir/td2.cpp.obj: CMakeFiles/ProjetTD2.dir/flags.make
-CMakeFiles/ProjetTD2.dir/td2.cpp.obj: CMakeFiles/ProjetTD2.dir/includes_CXX.rsp
-CMakeFiles/ProjetTD2.dir/td2.cpp.obj: C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP2/Olivier/TD2-H24-Fichiers/td2.cpp
-CMakeFiles/ProjetTD2.dir/td2.cpp.obj: CMakeFiles/ProjetTD2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ProjetTD2.dir/td2.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjetTD2.dir/td2.cpp.obj -MF CMakeFiles\ProjetTD2.dir\td2.cpp.obj.d -o CMakeFiles\ProjetTD2.dir\td2.cpp.obj -c C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\td2.cpp
+CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.obj: CMakeFiles/ProjetTD2.dir/flags.make
+CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.obj: CMakeFiles/ProjetTD2.dir/includes_CXX.rsp
+CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.obj: C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP3/Olivier/TD2-H24-Fichiers/td2_solutionnaire_2.cpp
+CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.obj: CMakeFiles/ProjetTD2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.obj -MF CMakeFiles\ProjetTD2.dir\td2_solutionnaire_2.cpp.obj.d -o CMakeFiles\ProjetTD2.dir\td2_solutionnaire_2.cpp.obj -c C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\td2_solutionnaire_2.cpp
 
-CMakeFiles/ProjetTD2.dir/td2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ProjetTD2.dir/td2.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\td2.cpp > CMakeFiles\ProjetTD2.dir\td2.cpp.i
+CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\td2_solutionnaire_2.cpp > CMakeFiles\ProjetTD2.dir\td2_solutionnaire_2.cpp.i
 
-CMakeFiles/ProjetTD2.dir/td2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ProjetTD2.dir/td2.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\td2.cpp -o CMakeFiles\ProjetTD2.dir\td2.cpp.s
+CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\td2_solutionnaire_2.cpp -o CMakeFiles\ProjetTD2.dir\td2_solutionnaire_2.cpp.s
 
 # Object files for target ProjetTD2
 ProjetTD2_OBJECTS = \
 "CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.obj" \
 "CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj" \
-"CMakeFiles/ProjetTD2.dir/td2.cpp.obj"
+"CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.obj"
 
 # External object files for target ProjetTD2
 ProjetTD2_EXTERNAL_OBJECTS =
 
 ProjetTD2.exe: CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.obj
 ProjetTD2.exe: CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj
-ProjetTD2.exe: CMakeFiles/ProjetTD2.dir/td2.cpp.obj
+ProjetTD2.exe: CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.obj
 ProjetTD2.exe: CMakeFiles/ProjetTD2.dir/build.make
 ProjetTD2.exe: CMakeFiles/ProjetTD2.dir/linkLibs.rsp
 ProjetTD2.exe: CMakeFiles/ProjetTD2.dir/objects1.rsp
 ProjetTD2.exe: CMakeFiles/ProjetTD2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ProjetTD2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ProjetTD2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ProjetTD2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -141,6 +141,6 @@ CMakeFiles/ProjetTD2.dir/clean:
 .PHONY : CMakeFiles/ProjetTD2.dir/clean
 
 CMakeFiles/ProjetTD2.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\build C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\build C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP2\Olivier\TD2-H24-Fichiers\build\CMakeFiles\ProjetTD2.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\build C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\build C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP3\Olivier\TD2-H24-Fichiers\build\CMakeFiles\ProjetTD2.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/ProjetTD2.dir/depend
 

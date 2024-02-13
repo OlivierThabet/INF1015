@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP2/Olivier/TD2-H24-Fichiers
+# Install script for directory: C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP3/Olivier/TD2-H24-Fichiers
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP2/Olivier/TD2-H24-Fichiers/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP3/Olivier/TD2-H24-Fichiers/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
