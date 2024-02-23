@@ -81,6 +81,7 @@ struct Film
 	Liste<Acteur> acteurs;
 	Film(string CTitre = "NA", string CRealisateur = "NA", int anneeDeSortie = 0, int nRecette = 0) 
 	: titre(CTitre), realisateur(CRealisateur), anneeSortie(anneeDeSortie), recette(nRecette) {};
+	Film(const Film& film): titre(film.titre), realisateur(film.realisateur), anneeSortie(film.anneeSortie), recette(film.recette), acteurs(film.acteurs) {};	
 	friend ostream& operator<<(ostream& os, const Film& film) {
 		os << "Titre: " << film.titre << endl;
 		os << "  Réalisateur: " << film.realisateur << "  Année :" << film.anneeSortie << endl;
