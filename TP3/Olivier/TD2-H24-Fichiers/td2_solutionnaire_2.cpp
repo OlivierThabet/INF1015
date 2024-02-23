@@ -72,22 +72,7 @@ void ListeFilms::changeDimension(int nouvelleCapacite)
 	elements = nouvelleListe;
 	capacite = nouvelleCapacite;
 }
-ostream& operator<<(ostream& os, const Acteur& acteur)
-{
-	return os << acteur.nom << ", " << acteur.anneeNaissance << " " << acteur.sexe;
-}
-ostream& operator<<(ostream& os, const Film& film)
-{
-	os << "Titre: " << film.titre << endl;
-	os << "  Réalisateur: " << film.realisateur << "  Année :" << film.anneeSortie << endl;
-	os << "  Recette: " << film.recette << "M$" << endl;
-	os << "Acteurs:" << endl;
-	for (const auto& acteurPtr : spanListeActeurs<Acteur>(film.acteurs)){
-		const Acteur& acteur = *acteurPtr;
-		os << acteur;
-	}
-	return os;
-}
+
 //TODO: Une fonction pour ajouter un Film à une ListeFilms, le film existant déjà; on veut uniquement ajouter le pointeur vers le film existant.  Cette fonction doit doubler la taille du tableau alloué, avec au minimum un élément, dans le cas où la capacité est insuffisante pour ajouter l'élément.  Il faut alors allouer un nouveau tableau plus grand, copier ce qu'il y avait dans l'ancien, et éliminer l'ancien trop petit.  Cette fonction ne doit copier aucun Film ni Acteur, elle doit copier uniquement des pointeurs.
 //[
 
@@ -122,12 +107,12 @@ void ListeFilms::enleverFilm(const Film* film)
 //TODO: Une fonction pour trouver un Acteur par son nom dans une ListeFilms, qui retourne un pointeur vers l'acteur, ou nullptr si l'acteur n'est pas trouvé.  Devrait utiliser span.
 //[
 // Voir la NOTE ci-dessous pourquoi Acteur* n'est pas const.  Noter que c'est valide puisque c'est la struct uniquement qui est const dans le paramètre, et non ce qui est pointé par la struct.
-span<shared_ptr<Acteur>> spanListeActeurs(const Liste<Acteur>& liste) { return span(liste.getElements().get(), liste.getNElements()); }
+span<shared_ptr<Acteur>> spanListeActeurs(Liste<Acteur>& liste) { return span(liste.elements.get(), liste.nElements); }
 
 //NOTE: Doit retourner un Acteur modifiable, sinon on ne peut pas l'utiliser pour modifier l'acteur tel que demandé dans le main, et on ne veut pas faire écrire deux versions.
 shared_ptr<Acteur> ListeFilms::trouverActeur(const string& nomActeur) const
 {
-	for (const Film* film : enSpan()) {
+	for (Film* film : enSpan()) {
 		for (shared_ptr<Acteur> acteur : spanListeActeurs(film->acteurs)) 
 		{
 			if (acteur->nom == nomActeur)
@@ -164,17 +149,13 @@ Film* lireFilm(istream& fichier
 	film.realisateur = lireString(fichier);
 	film.anneeSortie = int(lireUintTailleVariable(fichier));
 	film.recette     = int(lireUintTailleVariable(fichier));
-	film.acteurs.setNElements(int(lireUintTailleVariable(fichier)));
 	int nActeurs = int(lireUintTailleVariable(fichier));
-	film.acteurs = Liste<Acteur>(nActeurs);  // Allocate a new Liste<Acteur> object with the desired size
 	Film* filmp = new Film(film);
 	cout << "Création Film " << film.titre << endl;
 	
 
 	for (int i = 0; i < nActeurs; i++) {
-		shared_ptr<Acteur> acteur = lireActeur(fichier, listeFilms); 
-		filmp->acteurs.getElements()[i] = acteur;
-		filmp->acteurs.setNElements(filmp->acteurs.getNElements()+1);
+		filmp->acteurs.ajouterT(lireActeur(fichier, listeFilms));
 		//acteur->joueDans.ajouterFilm(filmp);
 	}
 	return filmp;

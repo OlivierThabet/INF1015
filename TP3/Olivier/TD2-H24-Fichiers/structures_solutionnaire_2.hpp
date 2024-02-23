@@ -32,48 +32,63 @@ private:
 
 template<typename T>
 class Liste {
-	public:
-	Liste(int capaciteInitiale) : capacite(capaciteInitiale), nElements(0), 
-	elements(make_unique<shared_ptr<T>[]>(capaciteInitiale)){}
-	Liste(const Liste& autre): capacite(autre.capacite), nElements(autre.nElements), 
-	elements(make_unique<shared_ptr<T>[]>(autre.capacite)){
-		for (int i = 0; i < nElements; ++i) {
-			elements[i] = autre.elements[i];
-		}
-		}
-	int getCapacite() const {return capacite;}
-	int getNElements() const {return nElements;}
-	unique_ptr<shared_ptr<T>[]> getElements() const {return elements;}
-	void setNElements(int nElement) {this->nElements = nElement;}
-	private:
+public:
 	int capacite, nElements;
 	unique_ptr<shared_ptr<T>[]> elements; // Pointeur vers un tableau de Acteur*, chaque Acteur* pointant vers un Acteur.
+	Liste(int nActeur=0): capacite(nActeur), nElements(0), elements(make_unique<shared_ptr<T>[]>(nActeur)){};
+	Liste(const Liste& autre) : capacite(autre.capacite), nElements(autre.nElements) {
+		unique_ptr<shared_ptr<T>[]> copieListe(make_unique<shared_ptr<T>[]>(autre.capacite));
+		for (int i = 0; i < nElements; ++i) {
+		 autre.elements[i]=elements[i] ;
+		}
+		elements = move(copieListe);
+	}
+	void ajouterT(shared_ptr<T> t) {
+		if (nElements == capacite) {
+			int CCapacite = max(1, 2 * capacite);
+			unique_ptr<shared_ptr<T>[]> copieListe(make_unique<shared_ptr<T>[]>(CCapacite));	
+			for (int i = 0; i < nElements; ++i) {
+				copieListe[i] = elements[i];
+			}	
+			for(int i = nElements; i < CCapacite; ++i){
+				copieListe[i] = nullptr;
+			}	
+		}
+		elements[nElements] = t;
+		++nElements;
+	}	
 	
 };
-/*template<typename T>
-ostream& operator<<(ostream& os, const Liste<T>& liste) {
-    for (int i = 0; i < liste.nElements; ++i) {
-        os << *liste.elements[i] <<"\n"; 
-    }
-    return os;
-}
-*/
-
-struct Film
-{
-	string titre="NA", realisateur="NA"; // Titre et nom du réalisateur (on suppose qu'il n'y a qu'un réalisateur).
-	int anneeSortie=0, recette=0; // Année de sortie et recette globale du film en millions de dollars
-	Liste<Acteur> acteurs;
-    };
-
 
 struct Acteur
 {
-	string nom; int anneeNaissance; char sexe;
+	string nom; int anneeNaissance; char sexe; // U pour inconnu
 	//ListeFilms joueDans;
-	/*ostream& operator<<(ostream& os, const Acteur& acteur) {
-    os << "Acteur: " << acteur.nom << ", " << acteur.anneeNaissance << ", " << acteur.sexe;
-    return os};*/
-
+	Acteur(string nomActeur = "NA", int anneeDeNaissance = 0, char sexeActeur = 'U') : nom(nomActeur), anneeNaissance(anneeDeNaissance), sexe(sexeActeur) {};
+	friend ostream& operator<<(ostream& os, const Acteur& acteur)
+{
+	return os << acteur.nom << ", " << acteur.anneeNaissance << " " << acteur.sexe;
+}
 	
 };
+
+struct Film
+{
+	string titre, realisateur; // Titre et nom du réalisateur (on suppose qu'il n'y a qu'un réalisateur).
+	int anneeSortie, recette, nActeurs; // Année de sortie et recette globale du film en millions de dollars
+	Liste<Acteur> acteurs;
+	Film(string CTitre = "NA", string CRealisateur = "NA", int anneeDeSortie = 0, int nRecette = 0) 
+	: titre(CTitre), realisateur(CRealisateur), anneeSortie(anneeDeSortie), recette(nRecette) {};
+	Film(const Film& film): titre(film.titre), realisateur(film.realisateur), anneeSortie(film.anneeSortie), recette(film.recette), acteurs(film.acteurs) {};	
+	friend ostream& operator<<(ostream& os, const Film& film) {
+		os << "Titre: " << film.titre << endl;
+		os << "  Réalisateur: " << film.realisateur << "  Année :" << film.anneeSortie << endl;
+		os << "  Recette: " << film.recette << "M$" << endl;
+		os << "Acteurs:" << endl;
+		for (int i = 0 ; i<film.acteurs.nElements; i++){
+			os << "  " << *(film.acteurs.elements[i]) << endl;	
+		}
+		return os;
+	}
+};
+
