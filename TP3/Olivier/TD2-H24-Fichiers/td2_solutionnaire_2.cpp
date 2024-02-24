@@ -107,7 +107,7 @@ void ListeFilms::enleverFilm(const Film* film)
 //TODO: Une fonction pour trouver un Acteur par son nom dans une ListeFilms, qui retourne un pointeur vers l'acteur, ou nullptr si l'acteur n'est pas trouvé.  Devrait utiliser span.
 //[
 // Voir la NOTE ci-dessous pourquoi Acteur* n'est pas const.  Noter que c'est valide puisque c'est la struct uniquement qui est const dans le paramètre, et non ce qui est pointé par la struct.
-span<shared_ptr<Acteur>> spanListeActeurs(const Liste<Acteur>& liste) { return span(liste.elements.get(), liste.nElements); }
+span<shared_ptr<Acteur>> spanListeActeurs(const ListeActeurs& liste) { return span(liste.elements.get(), liste.nElements); }
 
 //NOTE: Doit retourner un Acteur modifiable, sinon on ne peut pas l'utiliser pour modifier l'acteur tel que demandé dans le main, et on ne veut pas faire écrire deux versions.
 shared_ptr<Acteur> ListeFilms::trouverActeur(const string& nomActeur) const
@@ -319,4 +319,15 @@ int main()
 	//TODO: Détruire tout avant de terminer le programme.  L'objet verifierFuitesAllocations devrait afficher "Aucune fuite detectee." a la sortie du programme; il affichera "Fuite detectee:" avec la liste des blocs, s'il manque des delete.
 //[
 //]
+ Liste<string> listesTextes(2);
+ listesTextes.ajouterT(make_shared<string>("Donnez nous"));
+ listesTextes.ajouterT(make_shared<string>("une bonne note svp"));
+ Liste<string> listesTextes2 = listesTextes;
+ listesTextes2.ajouterT(make_shared<string>("Merci"));
+ cout << listesTextes2.elements[1] << endl;
+
+
+ 
+
+
 }

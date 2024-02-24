@@ -35,7 +35,7 @@ class Liste {
 public:
 	int capacite, nElements;
 	unique_ptr<shared_ptr<T>[]> elements; // Pointeur vers un tableau de Acteur*, chaque Acteur* pointant vers un Acteur.
-	Liste(int nActeur=0): capacite(nActeur), nElements(0), elements(make_unique<shared_ptr<T>[]>(nActeur)){};
+	Liste(int nT=0): capacite(nT), nElements(0), elements(make_unique<shared_ptr<T>[]>(nT)){};
 	Liste(const Liste& autre) : capacite(autre.capacite), nElements(autre.nElements) {
 		unique_ptr<shared_ptr<T>[]> copieListe(make_unique<shared_ptr<T>[]>(autre.capacite));
 		for (int i = 0; i < nElements; ++i) {
@@ -61,7 +61,7 @@ public:
 	}	
 	
 };
-
+using ListeActeurs = Liste<Acteur>; 
 struct Acteur
 {
 	string nom = "NA";
@@ -79,7 +79,7 @@ struct Film
 {
 	string titre="NA", realisateur="NA"; // Titre et nom du réalisateur (on suppose qu'il n'y a qu'un réalisateur).
 	int anneeSortie=0, recette=0; // Année de sortie et recette globale du film en millions de dollars
-	Liste<Acteur> acteurs;
+	ListeActeurs acteurs;
 	friend ostream& operator<<(ostream& os, const Film& film) {
 		os << "Titre: " << film.titre << endl;
 		os << "  Réalisateur: " << film.realisateur << "  Année :" << film.anneeSortie << endl;
