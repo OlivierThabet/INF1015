@@ -319,15 +319,11 @@ int main()
 	//TODO: Détruire tout avant de terminer le programme.  L'objet verifierFuitesAllocations devrait afficher "Aucune fuite detectee." a la sortie du programme; il affichera "Fuite detectee:" avec la liste des blocs, s'il manque des delete.
 //[
 //]
+
  Liste<string> listesTextes(2);
  listesTextes.ajouterT(make_shared<string>("Donnez nous"));
  listesTextes.ajouterT(make_shared<string>("une bonne note svp"));
  Liste<string> listesTextes2 = listesTextes;
  listesTextes2.ajouterT(make_shared<string>("Merci"));
  cout << listesTextes2.elements[1] << endl;
-
-
- 
-
-
 }
