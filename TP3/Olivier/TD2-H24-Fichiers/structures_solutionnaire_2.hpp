@@ -45,16 +45,16 @@ public:
 	}
 	void ajouterT(shared_ptr<T> t) {
 		if (nElements == capacite) {
-			int CCapacite = max(1, 2 * capacite);
-			unique_ptr<shared_ptr<T>[]> copieListe(make_unique<shared_ptr<T>[]>(CCapacite));	
+			int CapaciteT = max(1, 2 * capacite);
+			unique_ptr<shared_ptr<T>[]> copieListe(make_unique<shared_ptr<T>[]>(CapaciteT));	
 			for (int i = 0; i < nElements; ++i) {
 				copieListe[i] = elements[i];
 			}	
-			for(int i = nElements; i < CCapacite; ++i){
+			for(int i = nElements; i < CapaciteT; ++i){
 				copieListe[i] = nullptr;
 			}	
 			elements = move(copieListe);
-			capacite = CCapacite;
+			capacite = CapaciteT;
 		}
 		elements[nElements] = t;
 		++nElements;
@@ -64,24 +64,22 @@ public:
 
 struct Acteur
 {
-	string nom; int anneeNaissance; char sexe; // U pour inconnu
+	string nom = "NA";
+	int anneeNaissance = 0;
+	char sexe = 'U'; // U pour inconnu
 	//ListeFilms joueDans;
-	Acteur(string nomActeur = "NA", int anneeDeNaissance = 0, char sexeActeur = 'U') : nom(nomActeur), anneeNaissance(anneeDeNaissance), sexe(sexeActeur) {};
 	friend ostream& operator<<(ostream& os, const Acteur& acteur)
-{
-	return os << acteur.nom << ", " << acteur.anneeNaissance << " " << acteur.sexe;
-}
-	
+	{
+		return os << acteur.nom << ", " << acteur.anneeNaissance << " " << acteur.sexe;
+	}
+
 };
 
 struct Film
 {
-	string titre, realisateur; // Titre et nom du réalisateur (on suppose qu'il n'y a qu'un réalisateur).
-	int anneeSortie, recette, nActeurs; // Année de sortie et recette globale du film en millions de dollars
+	string titre="NA", realisateur="NA"; // Titre et nom du réalisateur (on suppose qu'il n'y a qu'un réalisateur).
+	int anneeSortie=0, recette=0; // Année de sortie et recette globale du film en millions de dollars
 	Liste<Acteur> acteurs;
-	Film(string CTitre = "NA", string CRealisateur = "NA", int anneeDeSortie = 0, int nRecette = 0) 
-	: titre(CTitre), realisateur(CRealisateur), anneeSortie(anneeDeSortie), recette(nRecette) {};
-	Film(const Film& film): titre(film.titre), realisateur(film.realisateur), anneeSortie(film.anneeSortie), recette(film.recette), acteurs(film.acteurs) {};	
 	friend ostream& operator<<(ostream& os, const Film& film) {
 		os << "Titre: " << film.titre << endl;
 		os << "  Réalisateur: " << film.realisateur << "  Année :" << film.anneeSortie << endl;
