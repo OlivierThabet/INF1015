@@ -154,7 +154,6 @@ Film* lireFilm(istream& fichier
 
 	for (int i = 0; i < nActeurs; i++) {
 		filmp->acteurs.ajouterT(lireActeur(fichier, listeFilms));
-		//acteur->joueDans.ajouterFilm(filmp);
 	}
 	return filmp;
 	return {};
@@ -179,13 +178,6 @@ ListeFilms::ListeFilms(const string& nomFichier) : possedeLesFilms_(true)
 			; //TODO: Ajouter le film à la liste.
 	}
 
-	//[
-	/*
-	//]
-	return {}; //TODO: Retourner la liste de films.
-	//[
-	*/
-	//]
 }
 
 //TODO: Une fonction pour détruire un film (relâcher toute la mémoire associée à ce film, et les acteurs qui ne jouent plus dans aucun films de la collection).  Noter qu'il faut enleve le film détruit des films dans lesquels jouent les acteurs.  Pour fins de débogage, affichez les noms des acteurs lors de leur destruction.
@@ -194,10 +186,6 @@ void detruireActeur(shared_ptr<Acteur> acteur)
 	cout << "Destruction Acteur " << acteur->nom << endl;
 
 }
-// bool joueEncore(const shared_ptr<Acteur> acteur)
-// {
-// 	return acteur->joueDans.size() != 0;
-// }
 void detruireFilm(Film* film)
 {
 
@@ -216,27 +204,6 @@ ListeFilms::~ListeFilms()
 			detruireFilm(film);
 	delete[] elements;
 }
-//]
-
-// void afficherActeur(const Acteur& acteur)
-// {
-// 	cout << "  " << acteur.nom << ", " << acteur.anneeNaissance << " " << acteur.sexe << endl;
-// }
-
-//TODO: Une fonction pour afficher un film avec tous ces acteurs (en utilisant la fonction afficherActeur ci-dessus).
-//[
-// void afficherFilm(const Film& film)
-// {
-// 	cout << "Titre: " << film.titre << endl;
-// 	cout << "  Réalisateur: " << film.realisateur << "  Année :" << film.anneeSortie << endl;
-// 	cout << "  Recette: " << film.recette << "M$" << endl;
-
-// 	cout << "Acteurs:" << endl;
-// 	for (const  shared_ptr<Acteur> acteur : spanListeActeurs<Acteur>(film.acteurs)){
-// 		afficherActeur(*acteur);
-// }
-// }
-// //]
 
 void afficherListeFilms(const ListeFilms& listeFilms)
 {
@@ -248,15 +215,6 @@ void afficherListeFilms(const ListeFilms& listeFilms)
 		cout << ligneDeSeparation;
 	}
 }
-// void afficherFilmographieActeur(const ListeFilms& listeFilms, const string& nomActeur)
-// {
-// 	//TODO: Utiliser votre fonction pour trouver l'acteur (au lieu de le mettre à nullptr).
-// 	const shared_ptr<Acteur> acteur = listeFilms.trouverActeur(nomActeur);
-// 	if (acteur == nullptr){
-// 		cout << "Aucun acteur de ce nom" << endl;}
-// 	else
-// 		{afficherListeFilms(acteur->joueDans);}
-// }
 
 int main()
 {
