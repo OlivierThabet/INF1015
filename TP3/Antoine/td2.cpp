@@ -319,6 +319,14 @@ int main()
 	afficherListeFilms(listeFilms);
 	//]
 
+	cout << ligneDeSeparation << "Le film avec 955M$ de recette est:" << endl;
+	//TODO: Afficher le film avec 955M$ de recette
+	//[
+	auto predicatRecette = [](const Film* film) {return film->recette == 955; };
+	Film* filmATrouver = listeFilms.trouverFilm(predicatRecette);
+	cout << *filmATrouver;
+	//]
+
 	//TODO: Faire les appels qui manquent pour avoir 0% de lignes non exécutées dans le programme (aucune ligne rouge dans la couverture de code; c'est normal que les lignes de "new" et "delete" soient jaunes).  Vous avez aussi le droit d'effacer les lignes du programmes qui ne sont pas exécutée, si finalement vous pensez qu'elle ne sont pas utiles.
 	//[
 	// Les lignes à mettre ici dépendent de comment ils ont fait leurs fonctions.  Dans mon cas:
