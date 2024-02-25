@@ -297,10 +297,10 @@ int main()
 
 	//TODO : chapitre 7 - 8
 	//[
-	Film skylien = *listeFilms[0];
+Film skylien = *listeFilms[0];
 	skylien.titre = "Skylien";
-	skylien.acteurs.elements[0] = listeFilms[1]->acteurs.elements[0];
-	skylien.acteurs.elements[0]->nom = "Daniel Wroughton Craig";
+	skylien.acteurs[0] = listeFilms[1]->acteurs[0];
+	skylien.acteurs[0]->nom = "Daniel Wroughton Craig";
 	cout << ligneDeSeparation << "Modification pour Skylien";
 	cout << skylien << endl;
 	cout << *listeFilms[0] << endl;
@@ -338,10 +338,14 @@ int main()
 //[
 //]
 
-	Liste<string> listesTextes(2);
+Liste<string> listesTextes(2);
 	listesTextes.ajouterT(make_shared<string>("Donnez nous"));
 	listesTextes.ajouterT(make_shared<string>("une bonne note svp"));
 	Liste<string> listesTextes2 = listesTextes;
-	listesTextes2.ajouterT(make_shared<string>("Merci"));
-	cout << listesTextes2.elements[1] << endl;
+	listesTextes[0] = make_shared<string>("lol");
+	*(listesTextes[1]) = "Mille Mercis";
+	cout << *(listesTextes[0]) << " "
+     << *(listesTextes[1]) << " "
+     << *(listesTextes2[0]) << " "
+     << *(listesTextes2[1]) << endl;
 }

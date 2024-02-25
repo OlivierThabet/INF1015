@@ -62,6 +62,8 @@ public:
 			elements[i] = autre.elements[i];
 		}
 	}
+	shared_ptr<T> operator[](int index) const {
+		return elements[index];
 	void ajouterT(shared_ptr<T> t) {
 		if (nElements == capacite) {
 			int CapaciteT = max(1, 2 * capacite);

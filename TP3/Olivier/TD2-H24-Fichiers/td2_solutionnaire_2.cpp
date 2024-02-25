@@ -1,5 +1,4 @@
-﻿//*** Solutionnaire version 2, sans les //[ //] au bon endroit car le code est assez différent du code fourni.
-#pragma region "Includes"//{
+﻿#pragma region "Includes"//{
 #define _CRT_SECURE_NO_WARNINGS // On permet d'utiliser les fonctions de copies de chaînes qui sont considérées non sécuritaires.
 
 #include "structures_solutionnaire_2.hpp"      // Structures de données pour la collection de films en mémoire.
@@ -22,7 +21,6 @@ using namespace iter;
 using namespace gsl;
 
 #pragma endregion//}
-
 typedef uint8_t UInt8;
 typedef uint16_t UInt16;
 
@@ -40,9 +38,9 @@ size_t lireUintTailleVariable(istream& fichier)
 {
 	uint8_t entete = lireType<uint8_t>(fichier);
 	switch (entete) {
-	case enteteTailleVariableDeBase+0: return lireType<uint8_t>(fichier);
-	case enteteTailleVariableDeBase+1: return lireType<uint16_t>(fichier);
-	case enteteTailleVariableDeBase+2: return lireType<uint32_t>(fichier);
+	case enteteTailleVariableDeBase + 0: return lireType<uint8_t>(fichier);
+	case enteteTailleVariableDeBase + 1: return lireType<uint16_t>(fichier);
+	case enteteTailleVariableDeBase + 2: return lireType<uint32_t>(fichier);
 	default:
 		erreurFataleAssert("Tentative de lire un entier de taille variable alors que le fichier contient autre chose à cet emplacement.");
 	}
@@ -60,15 +58,15 @@ string lireString(istream& fichier)
 
 void ListeFilms::changeDimension(int nouvelleCapacite)
 {
-	Film** nouvelleListe = new Film*[nouvelleCapacite];
-	
+	Film** nouvelleListe = new Film * [nouvelleCapacite];
+
 	if (elements != nullptr) {  // Noter que ce test n'est pas nécessaire puique nElements sera zéro si elements est nul, donc la boucle ne tentera pas de faire de copie, et on a le droit de faire delete sur un pointeur nul (ça ne fait rien).
 		nElements = min(nouvelleCapacite, nElements);
 		for (int i : range(nElements))
 			nouvelleListe[i] = elements[i];
 		delete[] elements;
 	}
-	
+
 	elements = nouvelleListe;
 	capacite = nouvelleCapacite;
 }
@@ -80,7 +78,7 @@ void ListeFilms::changeDimension(int nouvelleCapacite)
 void ListeFilms::ajouterFilm(Film* film)
 {
 	if (nElements == capacite)
-	changeDimension(max(1, capacite * 2));
+		changeDimension(max(1, capacite * 2));
 	elements[nElements++] = film;
 }
 
@@ -113,7 +111,7 @@ span<shared_ptr<Acteur>> spanListeActeurs(const ListeActeurs& liste) { return sp
 shared_ptr<Acteur> ListeFilms::trouverActeur(const string& nomActeur) const
 {
 	for (const Film* film : enSpan()) {
-		for (shared_ptr<Acteur> acteur : spanListeActeurs(film->acteurs)) 
+		for (shared_ptr<Acteur> acteur : spanListeActeurs(film->acteurs))
 		{
 			if (acteur->nom == nomActeur)
 				return acteur;
@@ -141,18 +139,18 @@ shared_ptr<Acteur> lireActeur(istream& fichier, ListeFilms& listeFilms)
 }
 
 Film* lireFilm(istream& fichier
-, ListeFilms& listeFilms
+	, ListeFilms& listeFilms
 )
 {
 	Film film = {};
-	film.titre       = lireString(fichier);
+	film.titre = lireString(fichier);
 	film.realisateur = lireString(fichier);
 	film.anneeSortie = int(lireUintTailleVariable(fichier));
-	film.recette     = int(lireUintTailleVariable(fichier));
+	film.recette = int(lireUintTailleVariable(fichier));
 	int nActeurs = int(lireUintTailleVariable(fichier));
 	Film* filmp = new Film(film);
 	cout << "Création Film " << film.titre << endl;
-	
+
 
 	for (int i = 0; i < nActeurs; i++) {
 		filmp->acteurs.ajouterT(lireActeur(fichier, listeFilms));
@@ -166,21 +164,21 @@ ListeFilms::ListeFilms(const string& nomFichier) : possedeLesFilms_(true)
 {
 	ifstream fichier(nomFichier, ios::binary);
 	fichier.exceptions(ios::failbit);
-	
+
 	int nElement = int(lireUintTailleVariable(fichier));
 
 	for ([[maybe_unused]] int i : range(nElement)) { //NOTE: On ne peut pas faire un span simple avec spanListeFilms car la liste est vide et on ajoute des éléments à mesure.
 		ajouterFilm(
-		//]
-		lireFilm(fichier//[
-		, *this  //NOTE: L'utilisation explicite de this n'est pas dans la matière indiquée pour le TD2.
-		//]
-		)//[
+			//]
+			lireFilm(fichier//[
+				, *this  //NOTE: L'utilisation explicite de this n'est pas dans la matière indiquée pour le TD2.
+				//]
+			)//[
 		)
-		//]
-		; //TODO: Ajouter le film à la liste.
+			//]
+			; //TODO: Ajouter le film à la liste.
 	}
-	
+
 	//[
 	/*
 	//]
@@ -194,7 +192,7 @@ ListeFilms::ListeFilms(const string& nomFichier) : possedeLesFilms_(true)
 void detruireActeur(shared_ptr<Acteur> acteur)
 {
 	cout << "Destruction Acteur " << acteur->nom << endl;
-	
+
 }
 // bool joueEncore(const shared_ptr<Acteur> acteur)
 // {
@@ -202,7 +200,7 @@ void detruireActeur(shared_ptr<Acteur> acteur)
 // }
 void detruireFilm(Film* film)
 {
-	
+
 	cout << "Destruction Film " << film->titre << endl;
 	delete film;
 }
@@ -242,13 +240,13 @@ ListeFilms::~ListeFilms()
 
 void afficherListeFilms(const ListeFilms& listeFilms)
 {
-    static const string ligneDeSeparation = "\033[32m────────────────────────────────────────\033[0m\n";
-    cout << ligneDeSeparation;
+	static const string ligneDeSeparation = "\033[32m────────────────────────────────────────\033[0m\n";
+	cout << ligneDeSeparation;
 
-    for (const Film* film : listeFilms.enSpan()) {
-        cout<<*film<<endl;
-        cout << ligneDeSeparation;
-    }
+	for (const Film* film : listeFilms.enSpan()) {
+		cout << *film << endl;
+		cout << ligneDeSeparation;
+	}
 }
 // void afficherFilmographieActeur(const ListeFilms& listeFilms, const string& nomActeur)
 // {
@@ -264,7 +262,6 @@ int main()
 {
 	bibliotheque_cours::activerCouleursAnsi();  // Permet sous Windows les "ANSI escape code" pour changer de couleurs https://en.wikipedia.org/wiki/ANSI_escape_code ; les consoles Linux/Mac les supportent normalement par défaut.
 
-	int* fuite = new int; //TODO: Enlever cette ligne après avoir vérifié qu'il y a bien un "Fuite detectee" de "4 octets" affiché à la fin de l'exécution, qui réfère à cette ligne du programme.
 
 	static const string ligneDeSeparation = "\n\033[35m════════════════════════════════════════\033[0m\n";
 
@@ -272,7 +269,7 @@ int main()
 
 	//TODO: La ligne suivante devrait lire le fichier binaire en allouant la mémoire nécessaire.  Devrait afficher les noms de 20 acteurs sans doublons (par l'affichage pour fins de débogage dans votre fonction lireActeur).
 	ListeFilms listeFilms("films.bin");
-	
+
 	cout << ligneDeSeparation << "Le premier film de la liste est:" << endl;
 	//TODO: Afficher le premier film de la liste.  Devrait être Alien.
 	//[
@@ -296,7 +293,19 @@ int main()
 	//[
 	//afficherFilmographieActeur(listeFilms, "Benedict Cumberbatch");
 	//]
-	
+
+	//TODO : chapitre 7 - 8
+	//[
+Film skylien = *listeFilms[0];
+	skylien.titre = "Skylien";
+	skylien.acteurs[0] = listeFilms[1]->acteurs[0];
+	skylien.acteurs[0]->nom = "Daniel Wroughton Craig";
+	cout << ligneDeSeparation << "Modification pour Skylien";
+	cout << skylien << endl;
+	cout << *listeFilms[0] << endl;
+	cout << *listeFilms[1] << endl;
+	//]
+
 	//TODO: Détruire et enlever le premier film de la liste (Alien).  Ceci devrait "automatiquement" (par ce que font vos fonctions) détruire les acteurs Tom Skerritt et John Hurt, mais pas Sigourney Weaver puisqu'elle joue aussi dans Avatar.
 	//[
 	detruireFilm(listeFilms.enSpan()[0]);
@@ -307,6 +316,14 @@ int main()
 	//TODO: Afficher la liste des films.
 	//[
 	afficherListeFilms(listeFilms);
+	//]
+
+	cout << ligneDeSeparation << "Le film avec 955M$ de recette est:" << endl;
+	//TODO: Afficher le film avec 955M$ de recette
+	//[
+	auto predicatRecette = [](const Film* film) {return film->recette == 955; };
+	Film* filmATrouver = listeFilms.trouverFilm(predicatRecette);
+	cout << *filmATrouver;
 	//]
 
 	//TODO: Faire les appels qui manquent pour avoir 0% de lignes non exécutées dans le programme (aucune ligne rouge dans la couverture de code; c'est normal que les lignes de "new" et "delete" soient jaunes).  Vous avez aussi le droit d'effacer les lignes du programmes qui ne sont pas exécutée, si finalement vous pensez qu'elle ne sont pas utiles.
@@ -320,10 +337,14 @@ int main()
 //[
 //]
 
- Liste<string> listesTextes(2);
- listesTextes.ajouterT(make_shared<string>("Donnez nous"));
- listesTextes.ajouterT(make_shared<string>("une bonne note svp"));
- Liste<string> listesTextes2 = listesTextes;
- listesTextes2.ajouterT(make_shared<string>("Merci"));
- cout << listesTextes2.elements[1] << endl;
+Liste<string> listesTextes(2);
+	listesTextes.ajouterT(make_shared<string>("Donnez nous"));
+	listesTextes.ajouterT(make_shared<string>("une bonne note svp"));
+	Liste<string> listesTextes2 = listesTextes;
+	listesTextes[0] = make_shared<string>("lol");
+	*(listesTextes[1]) = "Mille Mercis";
+	cout << *(listesTextes[0]) << " "
+     << *(listesTextes[1]) << " "
+     << *(listesTextes2[0]) << " "
+     << *(listesTextes2[1]) << endl;
 }

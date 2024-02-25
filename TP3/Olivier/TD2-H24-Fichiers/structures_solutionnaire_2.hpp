@@ -21,6 +21,28 @@ public:
 	shared_ptr<Acteur> trouverActeur(const string& nomActeur) const;
 	span<Film*> enSpan() const;
 	int size() const { return nElements; }
+	Film* operator[](size_t index)
+	{
+		if (index < static_cast<size_t>(nElements)) {
+			return enSpan()[index];
+		}
+		else {
+			// Gestion de l'erreur ici, par exemple, lancer une exception ou retourner une référence à un objet spécial
+			throw std::out_of_range("Index hors limites dans ListeFilms");
+		}
+	}
+	template<typename Predicat>
+	Film* trouverFilm(Predicat predicat) const
+	{
+		for (int i = 0; i < nElements; i++)
+		{
+			if (predicat(elements[i]))
+			{
+				return elements[i];
+			}
+		}
+		return nullptr;
+	}
 
 private:
 	void changeDimension(int nouvelleCapacite);
@@ -35,33 +57,32 @@ class Liste {
 public:
 	int capacite, nElements;
 	unique_ptr<shared_ptr<T>[]> elements; // Pointeur vers un tableau de Acteur*, chaque Acteur* pointant vers un Acteur.
-	Liste(int nT=0): capacite(nT), nElements(0), elements(make_unique<shared_ptr<T>[]>(nT)){};
-	Liste(const Liste& autre) : capacite(autre.capacite), nElements(autre.nElements) {
-		unique_ptr<shared_ptr<T>[]> copieListe(make_unique<shared_ptr<T>[]>(autre.capacite));
+	Liste(int nT = 0) : capacite(nT), nElements(0), elements(make_unique<shared_ptr<T>[]>(nT)) {};
+	Liste(const Liste& autre) : capacite(autre.capacite), nElements(autre.nElements), elements(std::make_unique<std::shared_ptr<T>[]>(autre.capacite)) {
 		for (int i = 0; i < nElements; ++i) {
-		 copieListe[i]=elements[i] ;
+			elements[i] = autre.elements[i];
 		}
-		elements = move(copieListe);
 	}
+	shared_ptr<T> operator[](int index) const {
+		return elements[index];}
 	void ajouterT(shared_ptr<T> t) {
 		if (nElements == capacite) {
 			int CapaciteT = max(1, 2 * capacite);
-			unique_ptr<shared_ptr<T>[]> copieListe(make_unique<shared_ptr<T>[]>(CapaciteT));	
+			unique_ptr<shared_ptr<T>[]> copieListe(make_unique<shared_ptr<T>[]>(CapaciteT));
 			for (int i = 0; i < nElements; ++i) {
 				copieListe[i] = elements[i];
-			}	
-			for(int i = nElements; i < CapaciteT; ++i){
+			}
+			for (int i = nElements; i < CapaciteT; ++i) {
 				copieListe[i] = nullptr;
-			}	
+			}
 			elements = move(copieListe);
 			capacite = CapaciteT;
 		}
 		elements[nElements] = t;
 		++nElements;
-	}	
-	
+	}
 };
-using ListeActeurs = Liste<Acteur>; 
+using ListeActeurs = Liste<Acteur>;
 struct Acteur
 {
 	string nom = "NA";
@@ -77,18 +98,17 @@ struct Acteur
 
 struct Film
 {
-	string titre="NA", realisateur="NA"; // Titre et nom du réalisateur (on suppose qu'il n'y a qu'un réalisateur).
-	int anneeSortie=0, recette=0; // Année de sortie et recette globale du film en millions de dollars
+	string titre = "NA", realisateur = "NA"; // Titre et nom du réalisateur (on suppose qu'il n'y a qu'un réalisateur).
+	int anneeSortie = 0, recette = 0; // Année de sortie et recette globale du film en millions de dollars
 	ListeActeurs acteurs;
 	friend ostream& operator<<(ostream& os, const Film& film) {
 		os << "Titre: " << film.titre << endl;
 		os << "  Réalisateur: " << film.realisateur << "  Année :" << film.anneeSortie << endl;
 		os << "  Recette: " << film.recette << "M$" << endl;
 		os << "Acteurs:" << endl;
-		for (int i = 0 ; i<film.acteurs.nElements; i++){
-			os << "  " << *(film.acteurs.elements[i]) << endl;	
+		for (int i = 0; i < film.acteurs.nElements; i++) {
+			os << "  " << *(film.acteurs.elements[i]) << endl;
 		}
 		return os;
 	}
 };
-
