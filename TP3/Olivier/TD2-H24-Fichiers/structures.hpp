@@ -88,7 +88,6 @@ struct Acteur
 	string nom = "NA";
 	int anneeNaissance = 0;
 	char sexe = 'U'; // U pour inconnu
-	//ListeFilms joueDans;
 	friend ostream& operator<<(ostream& os, const Acteur& acteur)
 	{
 		return os << acteur.nom << ", " << acteur.anneeNaissance << " " << acteur.sexe;
