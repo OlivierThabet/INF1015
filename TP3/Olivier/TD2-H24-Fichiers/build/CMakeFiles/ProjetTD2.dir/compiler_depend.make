@@ -949,7 +949,7 @@ CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.obj: C:/Users/olivi/OneDrive/De
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h \
-  C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP3/Olivier/TD2-H24-Fichiers/structures_solutionnaire_2.hpp
+  C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP3/Olivier/TD2-H24-Fichiers/structures.hpp
 
 
 C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP3/Olivier/TD2-H24-Fichiers/bibliotheque_cours/bibliotheque_cours.cpp:
@@ -1468,8 +1468,6 @@ C:/msys64/ucrt64/include/pthread_compat.h:
 
 C:/msys64/ucrt64/include/pthread_signal.h:
 
-C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP3/Olivier/TD2-H24-Fichiers/structures_solutionnaire_2.hpp:
-
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/prfchwintrin.h:
 
 C:/msys64/ucrt64/include/pthread_time.h:
@@ -1777,3 +1775,5 @@ C:/msys64/ucrt64/include/c++/13.1.0/bits/std_function.h:
 C:/msys64/ucrt64/include/c++/13.1.0/functional:
 
 C:/msys64/ucrt64/include/c++/13.1.0/pstl/glue_memory_defs.h:
+
+C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP3/Olivier/TD2-H24-Fichiers/structures.hpp:
