@@ -31,6 +31,17 @@ public:
 			throw std::out_of_range("Index hors limites dans ListeFilms");
 		}
 	}
+	template<typename Predicat>
+	Film* trouverFilm(Predicat predicat) const
+	{
+		for (int i = 0; i < nElements; i++)
+		{
+			if (predicat(elements[i]))
+			{
+				return elements[i];
+			}
+		}
+	}
 
 private:
 	void changeDimension(int nouvelleCapacite);
@@ -67,7 +78,6 @@ public:
 		elements[nElements] = t;
 		++nElements;
 	}
-
 };
 using ListeActeurs = Liste<Acteur>;
 struct Acteur
