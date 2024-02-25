@@ -338,11 +338,11 @@ Film skylien = *listeFilms[0];
 //]
 
 Liste<string> listesTextes(2);
-	listesTextes.ajouterT(make_shared<string>("Donnez nous"));
-	listesTextes.ajouterT(make_shared<string>("une bonne note svp"));
+	listesTextes.ajouterT(make_shared<string>("coucou"));
+	listesTextes.ajouterT(make_shared<string>("allo"));
 	Liste<string> listesTextes2 = listesTextes;
-	listesTextes[0] = make_shared<string>("lol");
-	*(listesTextes[1]) = "Mille Mercis";
+	listesTextes[0] = make_shared<string>("Bonjour");
+	*(listesTextes[1]) = "Salut";
 	cout << *(listesTextes[0]) << " "
      << *(listesTextes[1]) << " "
      << *(listesTextes2[0]) << " "
