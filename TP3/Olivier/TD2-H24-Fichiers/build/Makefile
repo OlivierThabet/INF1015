@@ -176,29 +176,29 @@ bibliotheque_cours/verification_allocation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.s
 .PHONY : bibliotheque_cours/verification_allocation.cpp.s
 
-td2_solutionnaire_2.obj: td2_solutionnaire_2.cpp.obj
-.PHONY : td2_solutionnaire_2.obj
+TD3.obj: TD3.cpp.obj
+.PHONY : TD3.obj
 
 # target to build an object file
-td2_solutionnaire_2.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.obj
-.PHONY : td2_solutionnaire_2.cpp.obj
+TD3.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/TD3.cpp.obj
+.PHONY : TD3.cpp.obj
 
-td2_solutionnaire_2.i: td2_solutionnaire_2.cpp.i
-.PHONY : td2_solutionnaire_2.i
+TD3.i: TD3.cpp.i
+.PHONY : TD3.i
 
 # target to preprocess a source file
-td2_solutionnaire_2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.i
-.PHONY : td2_solutionnaire_2.cpp.i
+TD3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/TD3.cpp.i
+.PHONY : TD3.cpp.i
 
-td2_solutionnaire_2.s: td2_solutionnaire_2.cpp.s
-.PHONY : td2_solutionnaire_2.s
+TD3.s: TD3.cpp.s
+.PHONY : TD3.s
 
 # target to generate assembly for a file
-td2_solutionnaire_2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td2_solutionnaire_2.cpp.s
-.PHONY : td2_solutionnaire_2.cpp.s
+TD3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/TD3.cpp.s
+.PHONY : TD3.cpp.s
 
 # Help Target
 help:
@@ -215,9 +215,9 @@ help:
 	@echo ... bibliotheque_cours/verification_allocation.obj
 	@echo ... bibliotheque_cours/verification_allocation.i
 	@echo ... bibliotheque_cours/verification_allocation.s
-	@echo ... td2_solutionnaire_2.obj
-	@echo ... td2_solutionnaire_2.i
-	@echo ... td2_solutionnaire_2.s
+	@echo ... TD3.obj
+	@echo ... TD3.i
+	@echo ... TD3.s
 .PHONY : help
 
 
