@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ProjetTD2",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ProjetTD2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ProjetTD2-Debug-0254a91229f5bbb577d0.json",
+					"name" : "ProjetTD2",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/build",
+		"source" : "C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

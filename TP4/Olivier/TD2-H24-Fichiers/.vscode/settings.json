@@ -1,0 +1,18 @@
+{
+    "cmake.debugConfig": {
+        "args": [
+        ],
+        "cwd": "${workspaceFolder}"
+    },
+    "gcovViewer.highlightMissedLines": true,
+    "files.associations": {
+        "iostream": "cpp",
+        "iomanip": "cpp",
+        "string": "cpp",
+        "iosfwd": "cpp"
+    },
+    "gcovViewer.buildDirectories": [
+        "c:\\Users\\olivi\\OneDrive\\Desktop\\session2\\INF1015\\INF1015\\TP2\\Olivier\\TD2-H24-Fichiers\\build"
+    ],
+    // "C_Cpp.loggingLevel": "Debug"
+}
