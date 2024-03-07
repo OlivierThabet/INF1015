@@ -252,20 +252,29 @@ int main()
 	{
 		bibliotheque.push_back(film);
 		cout << "Ajout de " << film->getTitre() << " dans biblio" << endl;
-		// enlever le cout a la fin
+		// enlever le cout a la fin et le getter
 	}
-	listeFilms.detruire(true);
+	
 
-	ifstream fichier("livre.txt");
-	cout << "Lecture du fichier livre.txt" << endl;
+	ifstream fichier("livres.txt");
 	while (fichier.good())
 	{
-		cout << "Lecture d'un livre" << endl;
 		string titre, auteur;
 		int anneeSortie, nPages, nCopiesVendues;
-		fichier >> quoted(titre) >> anneeSortie >> quoted(auteur) >> nPages >> nCopiesVendues;
+		fichier >> quoted(titre) >> anneeSortie >> quoted(auteur) >>  nCopiesVendues >>nPages;
 		Livre *livre = new Livre(nPages, nCopiesVendues, auteur, titre, anneeSortie);
 		bibliotheque.push_back(livre);
 		cout << "Ajout de " << livre->getTitre() << " dans biblio" << endl;
+		cout << "dont le nombre de pages est " << livre->getNPages() << endl;	
+		//enlever les cout a la fin et les getters
 	}
+	bibliotheque.pop_back();
+
+	
+	listeFilms.detruire(true);
+	for (Item* item : bibliotheque) {
+    delete item;
 }
+}
+
+

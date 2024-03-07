@@ -107,17 +107,21 @@ public:
 Livre() = default;	
 Livre(int nPages, int nCopiesVendues, string auteur, string titre, int anneeSortie): 
 Item(titre, anneeSortie),nPages_(nPages), nCopiesVendues_(nCopiesVendues), auteur_(auteur) {};
+int getNPages() const { return nPages_; }	
 };
 
 class Film : public Item
 {
-	friend ostream& operator<< (ostream& os, const Film& film);	
-	friend Film* lireFilm(istream& fichier, ListeFilms& listeFilms);
-	friend shared_ptr<Acteur> ListeFilms::trouverActeur(const string& nomActeur) const;
 	private:
 	string realisateur_; // Titre et nom du réalisateur (on suppose qu'il n'y a qu'un réalisateur).
 	int recette_=0; // Année de sortie et recette globale du film en millions de dollars
 	ListeActeurs acteurs_;
+	public:
+	friend ostream& operator<< (ostream& os, const Film& film);	
+	friend Film* lireFilm(istream& fichier, ListeFilms& listeFilms);
+	friend shared_ptr<Acteur> ListeFilms::trouverActeur(const string& nomActeur) const;
+	
+
 };
 
 struct Acteur
