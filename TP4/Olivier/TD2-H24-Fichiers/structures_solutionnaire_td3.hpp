@@ -76,10 +76,30 @@ private:
 
 using ListeActeurs = Liste<Acteur>;
 
-struct Film
+class item{
+	friend Film* lireFilm(istream& fichier, ListeFilms& listeFilms);
+	friend shared_ptr<Acteur> ListeFilms::trouverActeur(const string& nomActeur) const;
+	friend ostream& operator<< (ostream& os, const Film& film);
+	protected:
+	string titre= "NA";
+	int anneeSortie=0;
+};	
+
+class Livre: public item
 {
-	string titre, realisateur; // Titre et nom du réalisateur (on suppose qu'il n'y a qu'un réalisateur).
-	int anneeSortie=0, recette=0; // Année de sortie et recette globale du film en millions de dollars
+private:
+int nPages=0, nCopiesVendues=0;
+string auteur="NA";
+};
+
+class Film : public item
+{
+	friend ostream& operator<< (ostream& os, const Film& film);	
+	friend Film* lireFilm(istream& fichier, ListeFilms& listeFilms);
+	friend shared_ptr<Acteur> ListeFilms::trouverActeur(const string& nomActeur) const;
+	private:
+	string realisateur; // Titre et nom du réalisateur (on suppose qu'il n'y a qu'un réalisateur).
+	int recette=0; // Année de sortie et recette globale du film en millions de dollars
 	ListeActeurs acteurs;
 };
 

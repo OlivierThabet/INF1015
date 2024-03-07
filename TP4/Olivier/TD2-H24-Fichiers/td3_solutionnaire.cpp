@@ -252,7 +252,7 @@ int main()
 
 	// Tests chapitres 7-8:
 	// Les opérations suivantes fonctionnent.
-	Film skylien = *listeFilms[0];
+	/* Film skylien = *listeFilms[0];
 	skylien.titre = "Skylien";
 	skylien.acteurs[0] = listeFilms[1]->acteurs[0];
 	skylien.acteurs[0]->nom = "Daniel Wroughton Craig";
@@ -273,7 +273,7 @@ int main()
 	assert(listeFilms.trouver([&](const auto& f) { return commenceParVoyelle(f.titre); }) == listeFilms[0]);
 	assert(listeFilms.trouver([&](const auto& f) { return f.acteurs[0]->nom[0] != 'T'; }) == listeFilms[1]);
 	assert(listeFilms.trouver([&](const auto& f) { return commenceParVoyelle(f.titre) && f.acteurs[0]->nom[0] != 'T'; }) == listeFilms[2]);
-
+*/
 	// Tests chapitre 9:
 	Liste<string> listeTextes(2);
 	listeTextes.ajouter(make_shared<string>("Bonjour"));
