@@ -1,4 +1,12 @@
-﻿// Solutionnaire du TD3 INF1015 hiver 2024
+﻿	
+/**
+* fichier d'entête pour le TD4
+* \file   structures.hpp
+* \author Thabet et Leblanc
+* \date   17 mars 2024
+* Créé le 10 mars 2024
+*/
+// Solutionnaire du TD3 INF1015 hiver 2024
 // Par Francois-R.Boyer@PolyMtl.ca
 #pragma once
 // Structures mémoires pour une collection de films.
