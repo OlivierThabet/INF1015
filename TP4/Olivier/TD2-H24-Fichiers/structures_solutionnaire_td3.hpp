@@ -10,7 +10,7 @@
 // Par Francois-R.Boyer@PolyMtl.ca
 #pragma once
 // Structures mémoires pour une collection de films.
-
+#include <vector>
 #include <string>
 #include <memory>
 #include <functional>
@@ -84,31 +84,40 @@ private:
 
 using ListeActeurs = Liste<Acteur>;
 
-class item{
+class Item{
+	protected:
+	string titre_= "NA";
+	int anneeSortie_=0;
+	public:
+	Item() = default;	
+	Item(string titre, int anneeSortie): titre_(titre), anneeSortie_(anneeSortie) {};	
 	friend Film* lireFilm(istream& fichier, ListeFilms& listeFilms);
 	friend shared_ptr<Acteur> ListeFilms::trouverActeur(const string& nomActeur) const;
 	friend ostream& operator<< (ostream& os, const Film& film);
-	protected:
-	string titre= "NA";
-	int anneeSortie=0;
+	string getTitre() const { return titre_; }
+	
 };	
 
-class Livre: public item
+class Livre: public Item
 {
 private:
-int nPages=0, nCopiesVendues=0;
-string auteur="NA";
+int nPages_=0, nCopiesVendues_=0;
+string auteur_="NA";
+public:
+Livre() = default;	
+Livre(int nPages, int nCopiesVendues, string auteur, string titre, int anneeSortie): 
+Item(titre, anneeSortie),nPages_(nPages), nCopiesVendues_(nCopiesVendues), auteur_(auteur) {};
 };
 
-class Film : public item
+class Film : public Item
 {
 	friend ostream& operator<< (ostream& os, const Film& film);	
 	friend Film* lireFilm(istream& fichier, ListeFilms& listeFilms);
 	friend shared_ptr<Acteur> ListeFilms::trouverActeur(const string& nomActeur) const;
 	private:
-	string realisateur; // Titre et nom du réalisateur (on suppose qu'il n'y a qu'un réalisateur).
-	int recette=0; // Année de sortie et recette globale du film en millions de dollars
-	ListeActeurs acteurs;
+	string realisateur_; // Titre et nom du réalisateur (on suppose qu'il n'y a qu'un réalisateur).
+	int recette_=0; // Année de sortie et recette globale du film en millions de dollars
+	ListeActeurs acteurs_;
 };
 
 struct Acteur

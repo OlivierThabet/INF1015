@@ -9,7 +9,8 @@
         "iostream": "cpp",
         "iomanip": "cpp",
         "string": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "ostream": "cpp"
     },
     "gcovViewer.buildDirectories": [
         "c:\\Users\\olivi\\OneDrive\\Desktop\\session2\\INF1015\\INF1015\\TP2\\Olivier\\TD2-H24-Fichiers\\build"
