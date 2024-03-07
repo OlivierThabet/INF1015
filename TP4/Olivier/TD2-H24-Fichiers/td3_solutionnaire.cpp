@@ -3,7 +3,7 @@
 * \file   TD4.hpp
 * \author Thabet et Leblanc
 * \date   17 mars 2024
-* Créé le 10 mars 2024
+* Créé le 26 février 2024
 */
 // Solutionnaire du TD3 INF1015 hiver 2024
 // Par Francois-R.Boyer@PolyMtl.ca
