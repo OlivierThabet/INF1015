@@ -1,17 +1,15 @@
 ﻿/**
- * TD4 INF1015 hiver 2024
- * \file   TD4.hpp
- * \author Thabet et Leblanc
- * \date   17 mars 2024
- * Créé le 26 février 2024
- */
-// Solutionnaire du TD3 INF1015 hiver 2024
-// Par Francois-R.Boyer@PolyMtl.ca
+* fichier d'entête pour le TD4
+* \file   TD4.cpp
+* \author Thabet et Leblanc
+* \date   17 mars 2024
+* Créé le 10 mars 2024
+*/
 
 #pragma region "Includes"//{
 #define _CRT_SECURE_NO_WARNINGS // On permet d'utiliser les fonctions de copies de chaînes qui sont considérées non sécuritaires.
 
-#include "structures_solutionnaire_td3.hpp" // Structures de données pour la collection de films en mémoire.
+#include "structures.hpp" // Structures de données pour la collection de films en mémoire.
 
 #include "bibliotheque_cours.hpp"
 #include "verification_allocation.hpp" // Nos fonctions pour le rapport de fuites de mémoire.
@@ -209,17 +207,32 @@ ostream &operator<<(ostream &os, const Acteur &acteur)
 	return os << "  " << acteur.nom << ", " << acteur.anneeNaissance << " " << acteur.sexe << endl;
 }
 
-// Fonction pour afficher un film avec tous ces acteurs (en utilisant la fonction afficherActeur ci-dessus).
+// Fonctions pour afficher un film avec tous ces acteurs ou un livre
 //[
-ostream &operator<<(ostream &os, const Film &film)
-{
-	os << "Titre: " << film.titre_ << endl;
-	os << "  Réalisateur: " << film.realisateur_ << "  Année :" << film.anneeSortie_ << endl;
-	os << "  Recette: " << film.recette_ << "M$" << endl;
-
+void Livre::afficherDetailsLivre(std::ostream& os) const {
+	os << "  Nombre de pages: " << nPages_ << endl;
+	os << "  Nombre de copies vendues: " << nCopiesVendues_ << endl;
+	os << "Auteur:" << auteur_ << endl;
+}
+void Film::afficherDetailsFilm(std::ostream& os) const {
+	os << "  Réalisateur: " << realisateur_ << endl;
+	os << "  Recette: " << recette_ << "M$" << endl;
 	os << "Acteurs:" << endl;
-	for (const shared_ptr<Acteur> &acteur : film.acteurs_.enSpan())
-		os << *acteur;
+	for (const auto& acteur : acteurs_.enSpan()) {
+		os << *acteur; // Assurez-vous que l'opérateur << pour Acteur est bien défini
+	}
+}
+ostream& operator<<(ostream& os, const Affichable& obj) {
+	obj.afficherItem(os);
+	return os;
+}
+
+//]
+
+// Pour afficher un FilmLivre
+//[
+std::ostream& operator<<(std::ostream& os, const FilmLivre& filmLivre) {
+	filmLivre.afficherItem(os);
 	return os;
 }
 //]
@@ -247,14 +260,16 @@ int main()
 	static const string ligneDeSeparation = "\n\033[35m════════════════════════════════════════\033[0m\n";
 
 	ListeFilms listeFilms = creerListe("films.bin");
-	vector<Item *> bibliotheque;
+	vector<shared_ptr<Item> > bibliotheque;
 	for (Film *film : listeFilms.enSpan())
 	{
-		bibliotheque.push_back(film);
-		cout << "Ajout de " << film->getTitre() << " dans biblio" << endl;
+		shared_ptr<Item> filmPtr(film);
+		bibliotheque.push_back(filmPtr);
+		cout << "Ajout de " << filmPtr->getTitre() << " dans biblio" << endl;
 		// enlever le cout a la fin et le getter
 	}
 	
+	shared_ptr<Livre> livreTrouve = nullptr;
 
 	ifstream fichier("livres.txt");
 	while (fichier.good())
@@ -262,19 +277,34 @@ int main()
 		string titre, auteur;
 		int anneeSortie, nPages, nCopiesVendues;
 		fichier >> quoted(titre) >> anneeSortie >> quoted(auteur) >>  nCopiesVendues >>nPages;
-		Livre *livre = new Livre(nPages, nCopiesVendues, auteur, titre, anneeSortie);
+		shared_ptr<Livre> livre =  make_shared<Livre>(Livre(nPages, nCopiesVendues, auteur, titre, anneeSortie));
 		bibliotheque.push_back(livre);
 		cout << "Ajout de " << livre->getTitre() << " dans biblio" << endl;
-		cout << "dont le nombre de pages est " << livre->getNPages() << endl;	
+		cout << "dont le nombre de pages est " << livre->getNPages() << endl;
+		if (livre->getTitre() == "The Hobbit")
+		{
+			livreTrouve = livre;
+		}
 		//enlever les cout a la fin et les getters
 	}
 	bibliotheque.pop_back();
+	string titreRecherche = "Le Hobbit : La Bataille des Cinq Armées";
+	Film* filmTrouve = listeFilms.trouver([&titreRecherche](const Film& film)
+	{
+		return film.getTitre() == titreRecherche;
+	});
 
+	cout << ligneDeSeparation << endl;
+	cout << "Les infos du FilmLivre Le Hobbit sont : " << endl;
+	if(filmTrouve != nullptr && livreTrouve != nullptr)
+	{
+		shared_ptr<FilmLivre> filmLivre =  make_shared<FilmLivre>(FilmLivre(*filmTrouve, *livreTrouve));
+		cout << *filmLivre << endl;
+	}
+	// J'ai un pb ici, hs
 	
 	listeFilms.detruire(true);
-	for (Item* item : bibliotheque) {
-    delete item;
-}
+	
 }
 
 

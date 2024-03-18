@@ -11,6 +11,7 @@
 #pragma once
 // Structures mémoires pour une collection de films.
 #include <vector>
+#include <iostream>
 #include <string>
 #include <memory>
 #include <functional>
@@ -84,6 +85,12 @@ private:
 
 using ListeActeurs = Liste<Acteur>;
 
+class Affichable
+{
+public:
+	virtual void afficherItem(ostream& os) const = 0;
+};
+
 class Item{
 	protected:
 	string titre_= "NA";
@@ -93,12 +100,16 @@ class Item{
 	Item(string titre, int anneeSortie): titre_(titre), anneeSortie_(anneeSortie) {};	
 	friend Film* lireFilm(istream& fichier, ListeFilms& listeFilms);
 	friend shared_ptr<Acteur> ListeFilms::trouverActeur(const string& nomActeur) const;
-	friend ostream& operator<< (ostream& os, const Film& film);
 	string getTitre() const { return titre_; }
-	
+	int getAnneeSortie() const { return anneeSortie_; }
+	void afficherBase(ostream& os) const
+	{
+		os << "Titre: " << titre_ << endl;
+		os << "Année de sortie: " << anneeSortie_ << endl;
+	}
 };	
 
-class Livre: public Item
+class Livre: virtual public Item, public Affichable
 {
 private:
 int nPages_=0, nCopiesVendues_=0;
@@ -107,24 +118,50 @@ public:
 Livre() = default;	
 Livre(int nPages, int nCopiesVendues, string auteur, string titre, int anneeSortie): 
 Item(titre, anneeSortie),nPages_(nPages), nCopiesVendues_(nCopiesVendues), auteur_(auteur) {};
-int getNPages() const { return nPages_; }	
+int getNPages() const { return nPages_; }
+void afficherDetailsLivre(ostream& os) const;
+virtual void afficherItem(ostream& os) const override
+{
+	Item::afficherBase(os);
+	afficherDetailsLivre(os);
+}
 };
 
-class Film : public Item
+class Film : virtual public Item, public Affichable
 {
 	private:
 	string realisateur_; // Titre et nom du réalisateur (on suppose qu'il n'y a qu'un réalisateur).
 	int recette_=0; // Année de sortie et recette globale du film en millions de dollars
 	ListeActeurs acteurs_;
 	public:
-	friend ostream& operator<< (ostream& os, const Film& film);	
+	//friend ostream& operator<< (ostream& os, const Film& film);	
 	friend Film* lireFilm(istream& fichier, ListeFilms& listeFilms);
 	friend shared_ptr<Acteur> ListeFilms::trouverActeur(const string& nomActeur) const;
-	
-
+	void afficherDetailsFilm(ostream& os) const;
+	virtual void afficherItem(ostream& os) const override
+	{
+		Item::afficherBase(os);
+		afficherDetailsFilm(os);
+	}
 };
 
 struct Acteur
 {
 	string nom; int anneeNaissance=0; char sexe='\0';
+};
+
+class FilmLivre : public Film, public Livre
+{
+public:
+	FilmLivre(const Film& film, const Livre& livre) :
+		Item(film.getTitre(), film.getAnneeSortie()),
+		Film(film),
+		Livre(livre)
+	{}
+	virtual void afficherItem(ostream& os) const override
+	{
+		Item::afficherBase(os);
+		Film::afficherDetailsFilm(os);
+		Livre::afficherDetailsLivre(os);
+	}
 };
