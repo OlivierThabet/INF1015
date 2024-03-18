@@ -98,33 +98,33 @@ CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.s: cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.s"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP4\Olivier\TD2-H24-Fichiers\bibliotheque_cours\verification_allocation.cpp -o CMakeFiles\ProjetTD2.dir\bibliotheque_cours\verification_allocation.cpp.s
 
-CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.obj: CMakeFiles/ProjetTD2.dir/flags.make
-CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.obj: CMakeFiles/ProjetTD2.dir/includes_CXX.rsp
-CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.obj: C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/td3_solutionnaire.cpp
-CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.obj: CMakeFiles/ProjetTD2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP4\Olivier\TD2-H24-Fichiers\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.obj -MF CMakeFiles\ProjetTD2.dir\td3_solutionnaire.cpp.obj.d -o CMakeFiles\ProjetTD2.dir\td3_solutionnaire.cpp.obj -c C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP4\Olivier\TD2-H24-Fichiers\td3_solutionnaire.cpp
+CMakeFiles/ProjetTD2.dir/TD4.cpp.obj: CMakeFiles/ProjetTD2.dir/flags.make
+CMakeFiles/ProjetTD2.dir/TD4.cpp.obj: CMakeFiles/ProjetTD2.dir/includes_CXX.rsp
+CMakeFiles/ProjetTD2.dir/TD4.cpp.obj: C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/TD4.cpp
+CMakeFiles/ProjetTD2.dir/TD4.cpp.obj: CMakeFiles/ProjetTD2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP4\Olivier\TD2-H24-Fichiers\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ProjetTD2.dir/TD4.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProjetTD2.dir/TD4.cpp.obj -MF CMakeFiles\ProjetTD2.dir\TD4.cpp.obj.d -o CMakeFiles\ProjetTD2.dir\TD4.cpp.obj -c C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP4\Olivier\TD2-H24-Fichiers\TD4.cpp
 
-CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP4\Olivier\TD2-H24-Fichiers\td3_solutionnaire.cpp > CMakeFiles\ProjetTD2.dir\td3_solutionnaire.cpp.i
+CMakeFiles/ProjetTD2.dir/TD4.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ProjetTD2.dir/TD4.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP4\Olivier\TD2-H24-Fichiers\TD4.cpp > CMakeFiles\ProjetTD2.dir\TD4.cpp.i
 
-CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP4\Olivier\TD2-H24-Fichiers\td3_solutionnaire.cpp -o CMakeFiles\ProjetTD2.dir\td3_solutionnaire.cpp.s
+CMakeFiles/ProjetTD2.dir/TD4.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ProjetTD2.dir/TD4.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\olivi\OneDrive\Desktop\session2\INF1015\INF1015\TP4\Olivier\TD2-H24-Fichiers\TD4.cpp -o CMakeFiles\ProjetTD2.dir\TD4.cpp.s
 
 # Object files for target ProjetTD2
 ProjetTD2_OBJECTS = \
 "CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.obj" \
 "CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj" \
-"CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.obj"
+"CMakeFiles/ProjetTD2.dir/TD4.cpp.obj"
 
 # External object files for target ProjetTD2
 ProjetTD2_EXTERNAL_OBJECTS =
 
 ProjetTD2.exe: CMakeFiles/ProjetTD2.dir/bibliotheque_cours/bibliotheque_cours.cpp.obj
 ProjetTD2.exe: CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj
-ProjetTD2.exe: CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.obj
+ProjetTD2.exe: CMakeFiles/ProjetTD2.dir/TD4.cpp.obj
 ProjetTD2.exe: CMakeFiles/ProjetTD2.dir/build.make
 ProjetTD2.exe: CMakeFiles/ProjetTD2.dir/linkLibs.rsp
 ProjetTD2.exe: CMakeFiles/ProjetTD2.dir/objects1.rsp

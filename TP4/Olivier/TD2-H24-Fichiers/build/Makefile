@@ -176,29 +176,29 @@ bibliotheque_cours/verification_allocation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.s
 .PHONY : bibliotheque_cours/verification_allocation.cpp.s
 
-td3_solutionnaire.obj: td3_solutionnaire.cpp.obj
-.PHONY : td3_solutionnaire.obj
+TD4.obj: TD4.cpp.obj
+.PHONY : TD4.obj
 
 # target to build an object file
-td3_solutionnaire.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.obj
-.PHONY : td3_solutionnaire.cpp.obj
+TD4.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/TD4.cpp.obj
+.PHONY : TD4.cpp.obj
 
-td3_solutionnaire.i: td3_solutionnaire.cpp.i
-.PHONY : td3_solutionnaire.i
+TD4.i: TD4.cpp.i
+.PHONY : TD4.i
 
 # target to preprocess a source file
-td3_solutionnaire.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.i
-.PHONY : td3_solutionnaire.cpp.i
+TD4.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/TD4.cpp.i
+.PHONY : TD4.cpp.i
 
-td3_solutionnaire.s: td3_solutionnaire.cpp.s
-.PHONY : td3_solutionnaire.s
+TD4.s: TD4.cpp.s
+.PHONY : TD4.s
 
 # target to generate assembly for a file
-td3_solutionnaire.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.s
-.PHONY : td3_solutionnaire.cpp.s
+TD4.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/TD4.cpp.s
+.PHONY : TD4.cpp.s
 
 # Help Target
 help:
@@ -215,9 +215,9 @@ help:
 	@echo ... bibliotheque_cours/verification_allocation.obj
 	@echo ... bibliotheque_cours/verification_allocation.i
 	@echo ... bibliotheque_cours/verification_allocation.s
-	@echo ... td3_solutionnaire.obj
-	@echo ... td3_solutionnaire.i
-	@echo ... td3_solutionnaire.s
+	@echo ... TD4.obj
+	@echo ... TD4.i
+	@echo ... TD4.s
 .PHONY : help
 
 

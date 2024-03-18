@@ -729,8 +729,8 @@ CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xsavesintrin.h
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xtestintrin.h
 
-CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.obj
- C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/td3_solutionnaire.cpp
+CMakeFiles/ProjetTD2.dir/TD4.cpp.obj
+ C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/TD4.cpp
  C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/include/bibliotheque_cours.hpp
  C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/include/cppitertools/internal/iterbase.hpp
  C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/include/cppitertools/range.hpp
@@ -962,5 +962,5 @@ CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.obj
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h
- C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/structures_solutionnaire_td3.hpp
+ C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/structures.hpp
 

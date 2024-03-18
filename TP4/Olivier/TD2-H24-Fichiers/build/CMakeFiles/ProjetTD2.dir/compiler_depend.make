@@ -727,7 +727,7 @@ CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.obj: C:/
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xsavesintrin.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xtestintrin.h
 
-CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.obj: C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/td3_solutionnaire.cpp \
+CMakeFiles/ProjetTD2.dir/TD4.cpp.obj: C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/TD4.cpp \
   C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/include/bibliotheque_cours.hpp \
   C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/include/cppitertools/internal/iterbase.hpp \
   C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/include/cppitertools/range.hpp \
@@ -959,7 +959,7 @@ CMakeFiles/ProjetTD2.dir/td3_solutionnaire.cpp.obj: C:/Users/olivi/OneDrive/Desk
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/syslimits.h \
-  C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/structures_solutionnaire_td3.hpp
+  C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/structures.hpp
 
 
 C:/msys64/ucrt64/include/synchapi.h:
@@ -1662,6 +1662,8 @@ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/fmaintrin.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/gfniintrin.h:
 
+C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/structures.hpp:
+
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xopintrin.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/hresetintrin.h:
@@ -1768,7 +1770,7 @@ C:/msys64/ucrt64/include/c++/13.1.0/vector:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h:
 
-C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/td3_solutionnaire.cpp:
+C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/TD4.cpp:
 
 C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/include/debogage_memoire.hpp:
 
@@ -1793,5 +1795,3 @@ C:/msys64/ucrt64/include/c++/13.1.0/iomanip:
 C:/msys64/ucrt64/include/c++/13.1.0/pstl/glue_memory_defs.h:
 
 C:/msys64/ucrt64/include/c++/13.1.0/sstream:
-
-C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4/Olivier/TD2-H24-Fichiers/structures_solutionnaire_td3.hpp:
