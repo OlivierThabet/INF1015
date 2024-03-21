@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4_Antoine/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/ProjetTD2.dir/includes_CXX.rsp  -std=c++2a -fsigned-char -Wall -Wextra -Wpedantic -Woverloaded-virtual -Wno-unknown-pragmas -Wno-enum-compare --coverage -g -std=c++20 -fsigned-char -Wall -Wextra -Wpedantic -Woverloaded-virtual -Wno-unknown-pragmas -Wno-enum-compare -Wshadow -o CMakeFiles\\ProjetTD2.dir\\td2.cpp.obj -c C:\\Users\\olivi\\OneDrive\\Desktop\\session2\\INF1015\\INF1015\\TP4_Antoine\\td2.cpp",
+  "file": "C:/Users/olivi/OneDrive/Desktop/session2/INF1015/INF1015/TP4_Antoine/td2.cpp",
+  "output": "CMakeFiles/ProjetTD2.dir/td2.cpp.obj"
+}
+]

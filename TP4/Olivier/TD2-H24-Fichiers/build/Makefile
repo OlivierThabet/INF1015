@@ -128,6 +128,30 @@ ProjetTD2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/build
 .PHONY : ProjetTD2/fast
 
+TD4.obj: TD4.cpp.obj
+.PHONY : TD4.obj
+
+# target to build an object file
+TD4.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/TD4.cpp.obj
+.PHONY : TD4.cpp.obj
+
+TD4.i: TD4.cpp.i
+.PHONY : TD4.i
+
+# target to preprocess a source file
+TD4.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/TD4.cpp.i
+.PHONY : TD4.cpp.i
+
+TD4.s: TD4.cpp.s
+.PHONY : TD4.s
+
+# target to generate assembly for a file
+TD4.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/TD4.cpp.s
+.PHONY : TD4.cpp.s
+
 bibliotheque_cours/bibliotheque_cours.obj: bibliotheque_cours/bibliotheque_cours.cpp.obj
 .PHONY : bibliotheque_cours/bibliotheque_cours.obj
 
@@ -176,30 +200,6 @@ bibliotheque_cours/verification_allocation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/bibliotheque_cours/verification_allocation.cpp.s
 .PHONY : bibliotheque_cours/verification_allocation.cpp.s
 
-TD4.obj: TD4.cpp.obj
-.PHONY : TD4.obj
-
-# target to build an object file
-TD4.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/TD4.cpp.obj
-.PHONY : TD4.cpp.obj
-
-TD4.i: TD4.cpp.i
-.PHONY : TD4.i
-
-# target to preprocess a source file
-TD4.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/TD4.cpp.i
-.PHONY : TD4.cpp.i
-
-TD4.s: TD4.cpp.s
-.PHONY : TD4.s
-
-# target to generate assembly for a file
-TD4.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProjetTD2.dir\build.make CMakeFiles/ProjetTD2.dir/TD4.cpp.s
-.PHONY : TD4.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -209,15 +209,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... ProjetTD2
+	@echo ... TD4.obj
+	@echo ... TD4.i
+	@echo ... TD4.s
 	@echo ... bibliotheque_cours/bibliotheque_cours.obj
 	@echo ... bibliotheque_cours/bibliotheque_cours.i
 	@echo ... bibliotheque_cours/bibliotheque_cours.s
 	@echo ... bibliotheque_cours/verification_allocation.obj
 	@echo ... bibliotheque_cours/verification_allocation.i
 	@echo ... bibliotheque_cours/verification_allocation.s
-	@echo ... TD4.obj
-	@echo ... TD4.i
-	@echo ... TD4.s
 .PHONY : help
 
 
