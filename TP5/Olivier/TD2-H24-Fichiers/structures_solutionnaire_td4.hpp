@@ -3,7 +3,7 @@
 
 #pragma once
 // Structures mémoires pour une collection de films.
-
+#include <forward_list>
 #include <string>
 #include <iostream>
 #include <memory>
@@ -81,18 +81,17 @@ using ListeActeurs = Liste<Acteur>;
 
 class Affichable {
 public:
-	virtual void afficherSur(ostream& os) const = 0;
+	virtual void afficherSur() const = 0;
 	virtual ~Affichable() = default;
 };
 
 class Item : public Affichable {
 public:
-	void afficherSur(ostream& os) const override;
+	void afficherSur() const override;
 	void lireDe(istream& is);
 
 	friend Film* lireFilm(istream& fichier, ListeFilms& listeFilms);
 
-private:
 	string titre;
 	int anneeSortie = 0;
 };
@@ -100,14 +99,13 @@ private:
 class Film : virtual public Item
 {
 public:
-	void afficherSur(ostream& os) const override;
-	void afficherSpecifiqueSur(ostream& os) const;  // Affiche la parite de cette classe sans afficher la base virtuelle.
+	void afficherSur() const override;
+	//void afficherSpecifiqueSur(ostream& os) const;  // Affiche la parite de cette classe sans afficher la base virtuelle.
 
 	friend Film* lireFilm(istream& fichier, ListeFilms& listeFilms);
 	friend shared_ptr<Acteur> ListeFilms::trouverActeur(const string& nomActeur) const;
 	template <typename T> struct accessible_pour_tests_par;  // Non demandé, ni matière au cours, permet d'ajouter des accès pour les tests.
 
-private:
 	string realisateur; // (on suppose qu'il n'y a qu'un réalisateur).
 	int recette = 0; // Recette globale du film en millions de dollars
 	ListeActeurs acteurs;
@@ -118,11 +116,10 @@ class Livre : virtual public Item
 public:
 	Livre() = default;
 	explicit Livre(istream& is);
-	void afficherSur(ostream& os) const override;
-	void afficherSpecifiqueSur(ostream& os) const;
+	void afficherSur() const override;
+	//void afficherSpecifiqueSur(ostream& os) const;
 	void lireDe(istream& is);
 
-private:
 	string auteur;
 	int copiesVendues=0, nPages=0;
 };
@@ -131,7 +128,7 @@ class FilmLivre : public Film, public Livre {
 public:
 	FilmLivre(const Film& film, const Livre& livre) : Item(film), Film(film), Livre(livre) { }
 
-	void afficherSur(ostream& os) const override;
+	void afficherSur() const override;
 };
 
 struct Acteur

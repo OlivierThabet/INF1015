@@ -217,52 +217,40 @@ ostream& operator<< (ostream& os, const Acteur& acteur)
 
 // Fonctions pour afficher les Item, Film, Livre ...
 //[
-ostream& operator<< (ostream& os, const Affichable& affichable)
+// ostream& operator<< (ostream& os, const Affichable& affichable)
+// {
+// 	affichable.afficherSur(os);
+// 	return os;
+// }
+
+void Item::afficherSur() const
 {
-	affichable.afficherSur(os);
-	return os;
+	cout << titre;
 }
 
-void Item::afficherSur(ostream& os) const
+// void Film::afficherSpecifiqueSur() const
+// {
+// 	os << "  Réalisateur: " << realisateur << endl;
+// 	os << "  Recette: " << recette << "M$" << endl;
+// 	os << "Acteurs:" << endl;
+// 	for (auto&& acteur : acteurs.enSpan())
+// 		os << *acteur;
+// }
+
+void Film::afficherSur() const
 {
-	os << "Titre: " << titre << "  Année:" << anneeSortie << endl;
+	cout <<titre <<", de" << realisateur<<endl;
 }
 
-void Film::afficherSpecifiqueSur(ostream& os) const
+
+void Livre::afficherSur() const
 {
-	os << "  Réalisateur: " << realisateur << endl;
-	os << "  Recette: " << recette << "M$" << endl;
-	os << "Acteurs:" << endl;
-	for (auto&& acteur : acteurs.enSpan())
-		os << *acteur;
+	cout << titre <<", de" << auteur <<endl;
 }
 
-void Film::afficherSur(ostream& os) const
+void FilmLivre::afficherSur() const
 {
-	Item::afficherSur(os);
-	Film::afficherSpecifiqueSur(os);
-}
-
-void Livre::afficherSpecifiqueSur(ostream& os) const
-{
-	os << "  Auteur: " << auteur << endl;
-	os << "  Vendus: " << copiesVendues << "M  Pages: " << nPages << endl;
-}
-
-void Livre::afficherSur(ostream& os) const
-{
-	Item::afficherSur(os);
-	Livre::afficherSpecifiqueSur(os);
-}
-
-void FilmLivre::afficherSur(ostream& os) const
-{
-	Item::afficherSur(os);
-	os << "Combo:" << endl;
-	// L'affichage comme l'exemple sur Discord est accepté, ici on montre comment on pourrait séparer en deux méthodes pour ne pas avoir le même titre d'Item affiché plusieurs fois.
-	Film::afficherSpecifiqueSur(os);
-	os << "Livre:" << endl;
-	Livre::afficherSpecifiqueSur(os);
+ cout <<titre <<", de" << auteur <<"et" << realisateur <<endl;
 }
 
 //]
@@ -280,13 +268,14 @@ void Livre::lireDe(istream& is)
 Livre::Livre(istream& is) {
 	lireDe(is);
 }
-
-void afficherListeItems(span<unique_ptr<Item>> listeItems)
+template <typename Conteneur>	
+void afficherListeItems(const Conteneur& listeItems)
 {
 	static const string ligneDeSeparation = "\033[32m────────────────────────────────────────\033[0m\n";
 	cout << ligneDeSeparation;
-	for (auto&& item : listeItems) {
-		cout << *item << ligneDeSeparation;
+	for (auto&& item : listeItems) 
+	{
+		item->afficherSur();
 	}
 }
 
