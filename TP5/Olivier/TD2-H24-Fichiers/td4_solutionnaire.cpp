@@ -385,7 +385,7 @@ int main(int argc, char *argv[])
 	}
 	// 1.2
 	forward_list<Item *> listeItemsInverse;
-	for (auto &item : listeItems)
+	for (const auto &item : listeItems)
 	{
 		listeItemsInverse.push_front(item);
 	}
@@ -397,5 +397,6 @@ int main(int argc, char *argv[])
 		it = copieListeItems.insert_after(it, item);
 	}
 	//1.4
-
+	vector<Item*> vecItems;
+	
 }
