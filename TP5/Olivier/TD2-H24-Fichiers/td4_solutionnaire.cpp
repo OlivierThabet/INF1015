@@ -398,5 +398,9 @@ int main(int argc, char *argv[])
 	}
 	//1.4
 	vector<Item*> vecItems;
-	
+	listeItems.reverse();	
+	for (auto it = items.begin(); it != items.end(); ++it)
+	{
+		vecItems.push_back(it->get());
+	}	
 }
