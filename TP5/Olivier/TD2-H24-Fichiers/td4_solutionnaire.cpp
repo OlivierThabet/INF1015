@@ -403,4 +403,5 @@ int main(int argc, char *argv[])
 	{
 		vecItems.push_back(it->get());
 	}	
+	//on a deux boucle l'une à la suite de l'autre chacune de complexité O(n) donc 2*O(n) = O(n).
 }
